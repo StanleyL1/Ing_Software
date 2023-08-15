@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            min-height: auto;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            justify-content: center;
+            align-items: flex-start;
+            margin: 1px;
+            padding: 1px;
+        }
+
+        .content {
+            flex: 1;
+            background-color: rgba(12, 88, 210, 0.916);
+            padding: 10px;
+            width: 128.5%;
+            width: max-content 128.5;
+            /* Ajusta el ancho del contenido */
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .header img {
+            width: 45px;
+            height: 30px;
+            margin-right: 4px;
+        }
+
+        .Imagen {
+            margin: 12px;
+        }
+
+        .Imagen img {
+            background-color: white;
+            padding: 1px;
+            height: 23px;
+        }
+
+        .line {
+            width: 100%;
+            height: 1px;
+            background-color: #ccc;
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            padding: 21px;
+            margin-left: 6%;
+        }
+
+        .button {
+            background-color: #f0f0f0;
+            border-radius: 34px;
+            padding: 11px;
+            margin: 1px;
+            color: black;
+            font-size: 16px;
+            text-align: center;
+        }
+      .button.btn:hover {
+    background-color:rgb(192, 186, 186); 
+    color: white; 
+}
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .alert {
+            color: rgb(255, 255, 255);
+            background-color: rgba(2, 17, 62, 0.91);
+        }
+
+        .card {
+            background-color: rgba(2, 17, 62, 0.91);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 1465px;
+            width: max-content 1465px;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .left-content,
+        .right-content {
+            width: calc(30% - 10px);
+            padding: 10px;
+        }
+
+        .right-content img {
+            width: 36%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="header">
+                <img src="logoB.png" alt="Imagen de blog">
+                <span>Blog Informativo</span>
+            </div>
+            <div class="Imagen">
+                <img src="enlace.png" alt="Imagen">
+            </div>
+            <div class="line"></div>
+            <div class="buttons">
+                <a href="#Panel1" class="button btn btn-primary">Consejos rutinarios para mejora de la EPOC</a>
+                <a href="#Stan" class="button btn btn-primary">Consejos Practicos</a>
+                <a href="#Panel3" class="button btn btn-primary">Recomendaciones sobre la alimentacion y actividades cotidianas</a>
+                <a href="#Panel4" class="button btn btn-primary">Ejercicio y manejo de la EPOC</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div id="Panel1" class="card">
+        <div class="left-content">
+            <h3 class="card-title">Consejos rutinarios para mejora de la EPOC</h3>
+            <br>
+            <br>
+            <p style="text-align: left;">1. Deja de fumar: Si eres fumador, este es el paso más importante que
+                puede tomar para ralentizar la progresión de la EPOC. Consulta a tu medico para obtener ayuda y apoyo
+                para dejar de fumar.
+                <br>
+                <br>
+                2. Medicamentos y terapia: Sigue las intrucciones de tu médico en cuanto a tomar tus medicamentos y
+                seguir cualquir terapia recomendada. Los broncodilatadores y los corticosteroides inhalados
+            </p>
+        </div>
+        <div class="divider"></div>
+        <div class="right-content">
+        </div> 
+    </div>
+    <br>
+    <br>
+    <div id="Stan" class="card">
+        <div class="left-content">
+            <h2 class="card-title">Consejos Practicos</h2>
+            <br>
+            <br>
+            <p style="text-align: left;">1. Planifica tu día: Organiza tus actividades de manera que evites las
+                horas de mayor contaminación y calor, ya que pueden agravar los síntomas.
+                <br>
+                <br>
+                2. Utiliza un humidificador: Mantener el aire húmedo puede ayudar a aliviar la irritación en las vías
+                respiratorias.
+            </p>
+        </div>
+        <div class="divider"></div>
+        <div class="right-content">
+            <img src="Calendario.png" alt="">
+            <br>
+            <br>
+            <img src="humo.png" alt="humoxd">
+        </div>
+    </div>
+    <br>
+    <br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
