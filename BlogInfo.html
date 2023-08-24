@@ -7,6 +7,49 @@
     <title>Blog</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+      
+        .avion{
+            width: 26px ;
+
+        }
+        #scrollToTopButton {
+        display: none; /* Hide the button by default */
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+    }
+
+    #scrollToTopButton.active {
+        display: block; /* Show the button when it's active */
+    }
+    .circle-button {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: white(12, 88, 210, 0.916);
+;        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        animation: jump 1s infinite;
+    }
+   
+    @keyframes jump {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-15px);
+        }
+    }
+    .circle-button.active {
+        display: block;
+    }
         .down{
             width: 100%;
             height: 43px;
@@ -163,13 +206,16 @@
             padding: 10px;
         }
 
-        .right-content img {
+      /*  .right-content img {
             width: 36%;
-        }
+        } */
+      
     </style>
 </head>
 
-
+<body>
+   
+    
     <div class="container">
         <div class="content">
             <div class="line"></div>
@@ -183,7 +229,11 @@
                 
             </div>
         </div>
+    </div>  
+    <div>
+        <button onclick="scrollToTop()" class="circle-button" id="scrollToTopButton"><img class="avion" src="caza-estelar (1).png" alt=""></button>
     </div>
+    
     <br>
     <br>
     <div id="Panel1" class="card">
@@ -238,13 +288,7 @@
             </p>
         </div>
         
-        <div class="divider"></div>
-        <div class="right-content">
-            <img src="Calendario.png" alt="">
-            <br>
-            <br>
-            <img src="humo.png" alt="humoxd">
-        </div>
+        
     </div>
     <br>
     <br>
@@ -302,8 +346,24 @@
 
         <div class="down" style="background-color: rgba(2, 17, 62, 0.862); ">
             <a class="boton" link rel="stylesheet" class="button btn btn-primary" href="enlaces.html">información más reciente sobre la EPOC</a>
-        </div>
-        
+    </div>
+    <script>
+        // Function to scroll to the top of the page smoothly
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    
+        // Show/hide the button based on scroll position
+        window.addEventListener('scroll', function () {
+            var scrollToTopButton = document.getElementById('scrollToTopButton');
+            if (window.scrollY > 50) {
+                scrollToTopButton.classList.add('active');
+            } else {
+                scrollToTopButton.classList.remove('active');
+            }
+        });
+    </script>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
