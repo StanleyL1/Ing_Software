@@ -7,6 +7,10 @@
     <title>Blog</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        .down{
+            width: 100%;
+            height: 43px;
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -52,7 +56,7 @@
             margin-right: 4px;
         }
 
-        .Imagen {
+       /* .Imagen {
             margin: 12px;
         }
 
@@ -60,7 +64,8 @@
             background-color: white;
             padding: 1px;
             height: 23px;
-        }
+        } 
+*/
 
         .line {
             width: 100%;
@@ -70,22 +75,27 @@
         }
 
         .buttons {
-            padding: 21px;
-            margin-left: 6%;
+            padding: 12px;
+            margin-left: 1%;
         }
 
         .button {
             background-color: #f0f0f0;
-            border-radius: 34px;
-            padding: 11px;
+            border-radius: 24px;
+            padding: 2px;
             margin: 1px;
             color: black;
-            font-size: 16px;
+            font-size: 14px;
             text-align: center;
         }
       .button.btn:hover {
     background-color:rgb(192, 186, 186); 
     color: white; 
+}
+
+.boton {
+    color: white;
+    margin-left: 37%;
 }
 
         html {
@@ -130,7 +140,23 @@
             margin: 18px;
             width: 200px;
         }
-        
+
+        .card h4{
+            background-color: white;
+            color: black;
+            border-radius: 12px;
+            font-size: 22px;
+            margin: 18px;
+            width: 660px;
+        }
+        .card h5{
+            background-color: white;
+            color: black;
+            border-radius: 12px;
+            font-size: 22px;
+            margin: 18px;
+            width: 340px;
+        }
         .left-content,
         .right-content {
             width: calc(30% - 10px);
@@ -146,19 +172,15 @@
 <body>
     <div class="container">
         <div class="content">
-            <div class="header">
-                <img src="logoB.png" alt="Imagen de blog">
-                <span>Blog Informativo</span>
-            </div>
-            <div class="Imagen">
-                <img src="enlace.png" alt="Imagen">
-            </div>
             <div class="line"></div>
             <div class="buttons">
                 <a href="#Panel1" class="button btn btn-primary">Consejos rutinarios para mejora de la EPOC</a>
-                <a href="#Stan" class="button btn btn-primary">Consejos Practicos</a>
+                <a href="#Panel2" class="button btn btn-primary">Consejos Practicos</a>
                 <a href="#Panel3" class="button btn btn-primary">Recomendaciones sobre la alimentacion y actividades cotidianas</a>
                 <a href="#Panel4" class="button btn btn-primary">Ejercicio y manejo de la EPOC</a>
+                <a class="button btn btn-primary" href="Publicidad.html">últimos avances en los tratamientos de la EPOC</a>
+                    <br><br>
+                
             </div>
         </div>
     </div>
@@ -176,6 +198,12 @@
                 <br>
                 2. Medicamentos y terapia: Sigue las intrucciones de tu médico en cuanto a tomar tus medicamentos y
                 seguir cualquir terapia recomendada. Los broncodilatadores y los corticosteroides inhalados
+                <br>
+                <br>
+                3. Evitar climas demasiado fríos o calurosos, esto para evitar respiraciones continuas que pueden ahogarlo o asfixiar
+                <br>
+                <br>
+                4. Reaprender a hacer las tareas cotidianas a un ritmo más calmado.
             </p>
         </div>
         <div class="divider"></div>
@@ -184,19 +212,32 @@
     </div>
     <br>
     <br>
-    <div id="Stan" class="card">
+    <div id="Panel2" class="card">
         <div class="left-content">
             <h2 class="card-title">Consejos Practicos</h2>
             <br>
             <br>
-            <p style="text-align: left;">1. Planifica tu día: Organiza tus actividades de manera que evites las
-                horas de mayor contaminación y calor, ya que pueden agravar los síntomas.
+            <p style="text-align: left;">1. Procure tener aire limpio: Sus pulmones necesitan aire limpio. Así que si usted fuma, 
+                lo mejor que puede hacer por sus pulmones es dejar de fumar. 
+                Hable con su proveedor de atención médica acerca de las formas de dejar este hábito..
                 <br>
                 <br>
-                2. Utiliza un humidificador: Mantener el aire húmedo puede ayudar a aliviar la irritación en las vías
-                respiratorias.
+                2. Coma bien: La dieta afecta la EPOC de varias maneras. El alimento le da la energía para respirar. Inhalar y exhalar 
+                aire de los pulmones implica más trabajo y quema más calorías cuando usted tiene EPOC.
+
+                El peso también influye en la EPOC. El hecho de tener sobrepeso dificulta más
+                 la respiración, pero si usted está demasiado delgado, su cuerpo tendrá dificultad
+                  para combatir enfermedades.
+
+            <br>
+            <br>
+            3. Haga ejercicio: El hecho de estar activo puede aumentar su fuerza 
+            para que pueda respirar más fácilmente. También puede ayudarle a permanecer saludable por más tiempo.
+
+            Hable con su proveedor acerca de qué tipo de ejercicio es adecuado para usted
             </p>
         </div>
+        
         <div class="divider"></div>
         <div class="right-content">
             <img src="Calendario.png" alt="">
@@ -207,7 +248,62 @@
     </div>
     <br>
     <br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div id="Panel3" class="card">
+        <div class="left-content">
+            <h4 class="card-title">Recomendaciones sobre la alimentacion y actividades cotidianas</h4>
+            <br>
+            <br>
+            <p style="text-align: left;">1. Realiza tres comidas completas al día en
+                 horarios regulares, cuidando el tamaño de las porciones.
+                <br>
+                <br>
+                2. Consume alimentos naturales y evita alimentos industrializados, de preferencia
+                eliga verduras y frutas frescas de temporada.
+<br>
+<br>
+                3. Incorporar a diario alimentos de todos los grupos y realizar al menos 30 minutos
+                 de actividad física, no olvides tomar a diario 8 vasos de agua para mantenerte 
+                 hidratado siempre.
+                 <br>
+                 <br>
+                 4.consumir a diario 5 
+                 porciones de frutas y verduras en 
+                variedad de tipos y colores, reducir el uso de sal y el consumo de alimentos 
+                con alto contenido de sodio
+            </p>
+        </div>
+    </div>
+
+        <br>
+        <br>
+        <div id="Panel4" class="card">
+            <div class="left-content">
+                <h5 class="card-title">Ejercicio y manejo de la EPOC</h5>
+                <br>
+                <br>
+                <p style="text-align: left;">1.Hable con su médico: Es posible que le pida que haga ejercicios específicos y 
+                    le ayudará a establecer no sólo la frecuencia y la 
+                    duración con que realiza sus ejercicios, sino también sus metas del programa de ejercicios a largo plazo.
+                    <br>
+                    <br>
+                    2. Comience lenta y gradualmente: 
+                    Para cada ejercicio, controle durante cuánto tiempo puede
+                     hacerlo o cuente la cantidad de veces que puede hacerlo 
+                     antes de sentir una leve falta de aliento. Luego descanse y pase al siguiente 
+                    ejercicio. Cada semana, aumente el
+                     tiempo que pasa haciendo cada ejercicio o la cantidad de veces que hace cada uno.
+                     
+                </p>
+            </div>
+        </div>
+        <br>
+        <br>
+
+
+        <div class="down" style="background-color: rgba(2, 17, 62, 0.862); ">
+            <a class="boton" link rel="stylesheet" class="button btn btn-primary" href="enlaces.html">información más reciente sobre la EPOC</a>
+        </div>
+        
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
