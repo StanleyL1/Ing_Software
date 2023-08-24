@@ -21,7 +21,7 @@
     }
 
     #scrollToTopButton.active {
-        display: block; /* Show the button when it's active */
+        display: block; 
     }
     .circle-button {
         display: none;
@@ -36,10 +36,10 @@
 ;        font-size: 18px;
         border: none;
         cursor: pointer;
-        animation: jump 1s infinite;
+        animation: salto 1s infinite;
     }
    
-    @keyframes jump {
+    @keyframes salto {
         0%, 100% {
             transform: translateY(0);
         }
@@ -51,8 +51,11 @@
         display: block;
     }
         .down{
+            color: white ;
             width: 100%;
-            height: 43px;
+            height: 66px;
+            padding: 23px;
+            position: static;
         }
         body {
             font-family: Arial, sans-serif;
@@ -346,7 +349,10 @@
 
         <div class="down" style="background-color: rgba(2, 17, 62, 0.862); ">
             <a class="boton" link rel="stylesheet" class="button btn btn-primary" href="enlaces.html">información más reciente sobre la EPOC</a>
-    </div>
+    
+   
+        <a class="down" link rel="stylesheet" class="button btn btn-primary" href="Detalles.html">Detalles sobre diferentes aspectos de la EPOC.</a>
+</div>
     <script>
         // Function to scroll to the top of the page smoothly
         function scrollToTop() {
