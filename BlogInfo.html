@@ -13,7 +13,7 @@
 
         }
         #scrollToTopButton {
-        display: none; /* Hide the button by default */
+        display: none; 
         position: fixed;
         bottom: 20px;
         right: 20px;
@@ -79,7 +79,6 @@
             padding: 10px;
             width: 128.5%;
             width: max-content 128.5;
-            /* Ajusta el ancho del contenido */
             margin: 0;
             padding: 0;
         }
@@ -353,12 +352,11 @@
         <a class="down" link rel="stylesheet" class="button btn btn-primary" href="Detalles.html">Detalles sobre diferentes aspectos de la EPOC.</a>
 </div>
     <script>
-        // Function to scroll to the top of the page smoothly
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     
-        // Show/hide the button based on scroll position
+     
         window.addEventListener('scroll', function () {
             var scrollToTopButton = document.getElementById('scrollToTopButton');
             if (window.scrollY > 50) {
