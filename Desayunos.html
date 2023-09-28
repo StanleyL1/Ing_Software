@@ -10,6 +10,20 @@
 		<title>Escolarbite</title>
 		<link rel="stylesheet" href="styles.css" />
 	</head>
+    <script
+			src="https://kit.fontawesome.com/81581fb069.js"
+			crossorigin="anonymous"
+		></script>
+         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<style>
+    /* Estilo personalizado para el mensaje de mantenimiento */
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      
+    }
+</style>
 	<body>
 		<header>
 			<div class="container-hero">
@@ -51,6 +65,7 @@
 						<li><a href="BebidasH.html">Bebidas Heladas</a></li>
 						<li><a href="BebidasC.html">Bebidas Calientes</a></li>
 						<li><a href="Dulces.html">Golosinas</a></li>
+						
 
 					</ul>
 
@@ -63,3 +78,17 @@
 				</nav>
 			</div>
 		</header>
+        <h1>Esta página está siendo trabajada</h1>
+
+        <script>
+            // Función para mostrar la alerta de SweetAlert cuando se carga la página
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Mantenimiento en curso',
+                    text: 'Esta pagina aun no tiene su interfaz lista, lo lamentamos',
+                    confirmButtonText: 'Entendido'
+                });
+            });
+        </script>
+        </body>
