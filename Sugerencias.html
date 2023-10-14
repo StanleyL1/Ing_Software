@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Escolarbite</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.7/dist/sweetalert2.min.css">
+			<script
+			src="https://kit.fontawesome.com/81581fb069.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<style>
+		 
+		 .card-product {
+            width: 200px; 
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container-img img {
+            max-width: 100%; 
+            height: auto; 
+        }
+
+      
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .price {
+            font-weight: bold;
+        }
+        .titulo {
+            font-size: 44px;
+            font-weight: bold;
+			color: white;
+        }
+	</style>
+    
+	<body>
+		<header>
+			<div class="container-hero">
+				<div class="container hero">
+					<div class="customer-support">
+						<i class="fa-solid fa-headset"></i>
+						<div class="content-customer-support">
+							<span class="text">Soporte al cliente</span>
+							<span class="number">7260-2346</span>
+						</div>
+					</div>
+
+					<div class="container-logo">
+						<i class="fa-solid fa-utensils fa-beat"></i>
+						<br>
+						<h1 class="logo"><a href="Inicio.html">Escolarbite</a></h1>
+					</div>
+
+					<div class="container-user">
+						<i class="fa-solid fa-user"></i>
+						<a href="ordenes.html" class="fa-solid fa-basket-shopping"></a>
+						<div class="content-shopping-cart">
+							<span class="text">Carrito</span>
+							<div id="order-count">0</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="container-navbar">
+				<nav class="navbar container">
+					<i class="fa-solid fa-bars"></i>
+					<ul class="menu">
+						<li><a href="Inicio.html">Inicio</a></li>
+						<li><a href="Pepes.html">Pepe´ Coffe</a></li>
+						<li><a href="chalet.html">Chalet UGB</a></li>
+						<li><a href="ordenes.html">Ordenes</a></li>
+						<li><a href="Sugerencias.html">Sugerencias</a></li>
+						
+
+					</ul>
+
+					<form class="search-form">
+						<input type="search" placeholder="Buscar..." />
+						<button class="btn-search">
+							<i class="fa-solid fa-magnifying-glass"></i>
+						</button>
+					</form>
+				</nav>
+			</div>
+		</header>
+        <button id="miBoton" class="btn btn-primary">Pulsa para el confeti</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.7/dist/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@0.5.0/dist/canvas-confetti.min.js"></script>
+    <script>
+        function mostrarConfeti() {
+            Swal.fire({
+                title: 'Echo por Stanley :D !',
+                text: 'Todos los derechos son reservados por la empresa que se ejecuta, en este caso mi empresa claro ',
+                icon: 'success',
+                showCancelButton: false,
+                showConfirmButton: false,
+            });
+
+            // Configuración de lanzamiento del confeti
+            const confettiSettings = {
+                particleCount: 100,  // Cantidad de confeti
+                spread: 70,           // Área de dispersión
+                startVelocity: 30,    // Velocidad inicial
+                ticks: 600,           // Duración en milisegundos
+                colors: ['#ff0000', '#00ff00', '#0000ff']  // Colores del confeti
+            };
+
+            // Lanzar el confeti
+            const confetti = new ConfettiGenerator(confettiSettings);
+            confetti.render();
+        }
+
+        // Asociar la función al botón
+        document.getElementById('miBoton').addEventListener('click', mostrarConfeti);
+    </script>
+	</body>
+</html>

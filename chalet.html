@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Escolarbite</title>
+		<link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    
+	</head>
+	<style>
+		 .titulo {
+            font-size: 44px;
+            font-weight: bold;
+			color: white;
+        }
+	</style>
+    <script
+			src="https://kit.fontawesome.com/81581fb069.js"
+			crossorigin="anonymous"
+		></script>
+	<body>
+		<header>
+			<div class="container-hero">
+				<div class="container hero">
+					<div class="customer-support">
+						<i class="fa-solid fa-headset"></i>
+						<div class="content-customer-support">
+							<span class="text">Soporte al cliente</span>
+							<span class="number">7260-2346</span>
+						</div>
+					</div>
+
+					<div class="container-logo">
+						<i class="fa-solid fa-utensils fa-beat"></i>
+						<br>
+						<h1 class="logo"><a href="Inicio.html">Escolarbite</a></h1>
+					</div>
+
+					<div class="container-user">
+						<i class="fa-solid fa-user"></i>
+						<a href="ordenes.html" class="fa-solid fa-basket-shopping"></a>
+						<div class="content-shopping-cart">
+							<span class="text">Carrito</span>
+							<div id="order-count">0</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="container-navbar">
+				<nav class="navbar container">
+					<i class="fa-solid fa-bars"></i>
+					<ul class="menu">
+						<li><a href="Inicio.html">Inicio</a></li>
+						<li><a href="Pepes.html">Pepe´ Coffe</a></li>
+						<li><a href="chalet.html">Chalet UGB</a></li>
+						<li><a href="ordenes.html">Ordenes</a></li>
+						<li><a href="Sugerencias.html">Sugerencias</a></li>
+						
+
+					</ul>
+
+					<form class="search-form">
+						<input type="search" placeholder="Buscar..." />
+						<button class="btn-search">
+							<i class="fa-solid fa-magnifying-glass"></i>
+						</button>
+					</form>
+				</nav>
+			</div>
+		</header>
+        
+		<section class="banner">
+			<div class="content-banner">
+			
+					<div class="titulo">Chalet UGB</div>
+					<p>¡Bienvenido a Chalet UGB lideres en alimentos de calidad para ti.</p>
+					<p>Ven a visitarnos y poder verte pronto!</p>
+			</div>
+		</section>		
+			
+			<section class="container specials">
+				<h1 class="heading-1">Desayunos</h1>
+
+				<div class="container-products">
+					<!-- Producto 1 -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/frijoles.jpg" alt="frijoles" />
+							<span class="discount"></span>
+							<div class="button-group">
+							
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('frijoles', 0.50)">Ordenar</button>
+	
+							</div>
+							<h3>frijoles</h3>
+							
+			
+							<p class="price">$0.50</p>
+						</div>
+					</div>
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/platanos.jpg" alt="platanos" />
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('Platanos', 0.75)">Ordenar</button>
+	
+							</div>
+							<h3>Platanos</h3>
+							
+			
+							<p class="price">$0.75</p>
+						</div>
+					</div>
+					<!-- Producto 2 -->
+					<div class="card-product">
+						<div class="container-img">
+							<img
+								src="productos/arroz negrito.jpg"
+								alt="arroz negrito.jpg"
+							/>
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('Arroz Negrito', 0.50)">Ordenar</button>
+	
+							</div>
+							<h3>Arroz Negrito</h3>
+							
+			
+							<p class="price">$0.50</p>
+						</div>
+					</div>
+					
+					<!--  -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/huevo.jpg" alt="Huevo" />
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('Huevo', 0.60)">Ordenar</button>
+	
+							</div>
+							<h3>Huevo</h3>
+						
+							<p class="price">$0.60</p>
+						</div>
+					</div>
+					<!--  -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/tortilla.jpg" alt="Tortilla" />
+							<div class="button-group">
+							
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('Tortilla', 0.60)">Ordenar</button>
+	
+							</div>
+							<h3>Tortilla con Quesillo</h3>
+							
+			
+							<p class="price">$0.60</p>
+						</div>
+					</div>
+
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/jamon huevo.jpg" alt="jamonhuevo" />
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('Jamonhuevo', 0.95)">Ordenar</button>
+	
+							</div>
+							<h3>Jamon con Huevo</h3>
+							
+			
+							<p class="price">$0.95</p>
+						</div>
+					</div>
+					<div class="card-product">
+						<div class="container-img">
+							<img
+								src="productos/salchicha.jpg"
+								alt="salchicha.jpg"
+							/>
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('huevosalchicha', 0.95)">Ordenar</button>
+	
+							</div>
+							<h3>Huevo con salchicha</h3>
+							<p class="price">$0.95</p>
+						</div>
+					</div>
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/chorizo.JPG" alt="Chorizo" />
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('Chorizo', 0.95)">Ordenar</button>
+	
+							</div>
+							<h3>Chorizo entomatado</h3>
+						
+							<p class="price">$0.95</p>
+						</div>
+					</div>
+					<!-- Producto 1 -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/cafe 8 onz.png" alt="cafe 8 onz" />
+							<span class="discount"></span>
+							<div class="button-group">
+							
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('cafe 8 onz', 0.30)">Ordenar</button>
+	
+							</div>
+							<h3>Cafe 8 Onz</h3>
+						
+							<p class="price">$0.30</p>
+						</div>
+					</div>
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/chocolate.jpg" alt="chocolate" />
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br>
+								<button class="btn btn-primary" onclick="agregarProducto('Chocolate', 0.35)">Ordenar</button>
+	
+							</div>
+							<h3>Chocolate 8 Onz</h3>
+							
+			
+							<p class="price">$0.35</p>
+						</div>
+					</div>
+					<!-- Producto 2 -->
+					<div class="card-product">
+						<div class="container-img">
+							<img
+								src="productos/crema.jpg"
+								alt="crema.jpg"
+							/>
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br><br><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('Crema', 0.35)">Ordenar</button>
+	
+							</div>
+							<h3>Crema Porcion</h3>
+							<p class="price">$0.35</p>
+						</div>
+					</div>
+					
+					<!--  -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/queso.jpg" alt="Queso" />
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('Queso', 0.40)">Ordenar</button>
+	
+							</div>
+							<h3>Queso Porcion</h3>
+						
+							<p class="price">$0.40</p>
+						</div>
+					</div>
+
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/pupusafrijol.jpg" alt="pupusafrijol" />
+							<span class="discount"></span>
+							<div class="button-group">
+							
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('pupusafrijol', 0.60)">Ordenar</button>
+	
+							</div>
+							<h3>Pupusa de Frijol</h3>
+						
+							<p class="price">$0.60</p>
+						</div>
+					</div>
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/pupusachicharron.jpg" alt="pupusachicharron" />
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('pupusachicharron', 0.70)">Ordenar</button>
+	
+							</div>
+							<h3>Pupusa de Chicharron</h3>
+						
+							<p class="price">$0.70</p>
+						</div>
+					</div>
+					<!-- Producto 2 -->
+					<div class="card-product">
+						<div class="container-img">
+							<img
+								src="productos/pupusapollo.jpg"
+								alt="pupusapollo"
+							/>
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('pupusapollo', 0.70)">Ordenar</button>
+	
+							</div>
+							<h3>Pupusa de Pollo</h3>
+							<p class="price">$0.70</p>
+						</div>
+					</div>
+			</div>
+			<section class="container specials">
+				<h1 class="heading-1">Almuerzos</h1>
+
+				<div class="container-products">
+					<!-- Producto 1 -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/polloempanizado.jpg" alt="polloempanizado" />
+							<span class="discount"></span>
+							<div class="button-group">
+							
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('polloempanizado', 3.00)">Ordenar</button>
+	
+							</div>
+							<h3>Pollo Empanizado</h3>
+							
+			
+							<p class="price">$3.00</p>
+						</div>
+					</div>
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/polloentomatado.jpg" alt="polloentomatado" />
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('Polloentomatado', 2.00)">Ordenar</button>
+	
+							</div>
+							<h3>Pollo entomatado</h3>
+							<p class="price">$2.00</p>
+						</div>
+					</div>
+					<!-- Producto 2 -->
+					<div class="card-product">
+						<div class="container-img">
+							<img
+								src="productos/polloencebollado.JPG"
+								alt="polloencebollado"
+							/>
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('polloencebollado', 2.00)">Ordenar</button>
+	
+							</div>
+							<h3>Pollo encebollado</h3>
+	
+							<p class="price">$2.00</p>
+						</div>
+					</div>
+					
+					<!--  -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/polloguisado.jpg" alt="polloguisado" />
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('polloguisado', 2.50)">Ordenar</button>
+	
+							</div>
+							<h3>Pollo Guisado</h3>
+						
+							<p class="price">$2.50</p>
+						</div>
+					</div>
+					<!--  -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/pollodorado.jpg" alt="pollodorado" />
+							<div class="button-group">
+							
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br><br><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('pollodorado', 3.00)">Ordenar</button>
+	
+							</div>
+							<h3>Pollo Dorado</h3>
+							<p class="price">$3.00</p>
+						</div>
+					</div>
+
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/carneguisada.jpg" alt="carneguisada" />
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('carneguisada', 2.50)">Ordenar</button>
+	
+							</div>
+							<h3>Carne Guisada</h3>
+							
+			
+							<p class="price">$2.50</p>
+						</div>
+					</div>
+					<div class="card-product">
+						<div class="container-img">
+							<img
+								src="productos/carnetomatada.jpg"
+								alt="carnetomatada"
+							/>
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br><br><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('carnetomatada', 2.50)">Ordenar</button>
+	
+							</div>
+							<h3>Carne Entomatada</h3>
+							<p class="price">$2.50</p>
+						</div>
+					</div>
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/carnencebollada.jpg" alt="carnencebollada" />
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('carnencebollada', 2.50)">Ordenar</button>
+	
+							</div>
+							<h3>Carne encebollada</h3>
+						
+							<p class="price">$2.50</p>
+						</div>
+					</div>
+					<!-- Producto 1 -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/chuleta.jpg" alt="chuleta" />
+							<span class="discount"></span>
+							<div class="button-group">
+							
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('chuleta', 2.50)">Ordenar</button>
+	
+							</div>
+							<h3>Chuleta</h3>
+						
+							<p class="price">$2.50</p>
+						</div>
+					</div>
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/rellenocoli.jpg" alt="rellenocoli" />
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('rellenocoli', 2.00)">Ordenar</button>
+	
+							</div>
+							<h3>Relleno de Coliflor</h3>
+							<p class="price">$2.00</p>
+						</div>
+					</div>
+					<!-- Producto 2 -->
+					<div class="card-product">
+						<div class="container-img">
+							<img
+								src="productos/rellenoejo.jpg"
+								alt="rellenoejo"
+							/>
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('rellenoejo', 2.00)">Ordenar</button>
+	
+							</div>
+							<h3>Relleno de ejote</h3>
+							<p class="price">$2.00</p>
+						</div>
+					</div>
+					
+					<!--  -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/rellenoguis.jpg" alt="rellenoguis" />
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br><br><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('rellenoguis', 2.00)">Ordenar</button>
+	
+							</div>
+							<h3>Relleno de Guisquil</h3>
+						
+							<p class="price">$2.00</p>
+						</div>
+					</div>
+			</div>
+
+			<section class="container specials">
+				<h1 class="heading-1">Bebidas</h1>
+
+				<div class="container-products">
+					<!-- Producto 1 -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/sodas.jpg" alt="sodas" />
+							<span class="discount"></span>
+							<div class="button-group">
+							
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('sodas', 0.75)">Ordenar</button>
+	
+							</div>
+							<h3>Sodas</h3>
+							<p class="price">$0.75</p>
+						</div>
+					</div>
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/gatorade.jpg" alt="gatorade" />
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('gatorade', 1.10)">Ordenar</button>
+	
+							</div>
+							<h3>Gatorade Grande</h3>
+							<p class="price">$1.10</p>
+						</div>
+					</div>
+					<!-- Producto 2 -->
+					<div class="card-product">
+						<div class="container-img">
+							<img
+								src="productos/agua.jpg"
+								alt="agua"
+							/>
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('agua', 0.50)">Ordenar</button>
+	
+							</div>
+							<h3>Agua medio litro</h3>
+							<p class="price">$0.50</p>
+						</div>
+					</div>
+					
+					<!--  -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/frutado.jpg" alt="frutado" />
+							<span class="discount"></span>
+							<div class="button-group">
+								
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('frutado', 0.60)">Ordenar</button>
+	
+							</div>
+							<h3>Frutado</h3>
+						
+							<p class="price">$0.60</p>
+						</div>
+					</div>
+					<!--  -->
+					<div class="card-product">
+						<div class="container-img">
+							<img src="productos/yogut.jpg" alt="yogut" />
+							<div class="button-group">
+							
+							</div>
+						</div>
+						<div class="content-card-product">
+							<div class="stars"><br><br><br><br><br>
+								<button class="btn btn-primary" onclick="agregarProducto('yogut', 0.75)">Ordenar</button>
+
+							</div>
+							<h3>Yogurt</h3>
+							<p class="price">$0.75</p>
+						</div>
+					</div>
+				</div>
+
+				<section class="container specials">
+					<h1 class="heading-1">	Golosinas</h1>
+	
+					<div class="container-products">
+						<!-- Producto 1 -->
+						<div class="card-product">
+							<div class="container-img">
+								<img src="productos/halls.jpg" alt="halls" />
+								<span class="discount"></span>
+								<div class="button-group">
+								
+								</div>
+							</div>
+							<div class="content-card-product">
+								<div class="stars"><br><br><br><br><br>
+									<button class="btn btn-primary" onclick="agregarProducto('halls', 0.40)">Ordenar</button>
+		
+								</div>
+								<h3>Halls de Barra</h3>
+								
+				
+								<p class="price">$0.40</p>
+							</div>
+						</div>
+						<div class="card-product">
+							<div class="container-img">
+								<img src="productos/trident.jpg" alt="tridentpe" />
+								<span class="discount"></span>
+								<div class="button-group">
+									
+								</div>
+							</div>
+							<div class="content-card-product">
+								<div class="stars"><br><br><br><br><br>
+									<button class="btn btn-primary" onclick="agregarProducto('tridentpe', 0.15)">Ordenar</button>
+		
+								</div>
+								<h3>Trident Pequeños</h3>
+								<p class="price">$0.15</p>
+							</div>
+						</div>
+						<!-- Producto 2 -->
+						<div class="card-product">
+							<div class="container-img">
+								<img
+									src="productos/trident18.jpg"
+									alt="trident18"
+								/>
+								<span class="discount"></span>
+								<div class="button-group">
+									
+								</div>
+							</div>
+							<div class="content-card-product">
+								<div class="stars"><br><br><br><br><br>
+									<button class="btn btn-primary" onclick="agregarProducto('trident18', 1.25)">Ordenar</button>
+		
+								</div>
+								<h3>Trident 18u</h3>
+
+								<p class="price">$1.25</p>
+							</div>
+						</div>
+						
+						<!--  -->
+						<div class="card-product">
+							<div class="container-img">
+								<img src="productos/trident twist.jpg" alt="tridentwist" />
+								<span class="discount"></span>
+								<div class="button-group">
+									
+								</div>
+							</div>
+							<div class="content-card-product">
+								<div class="stars"><br><br>
+									<button class="btn btn-primary" onclick="agregarProducto('tridentwist', 0.65)">Ordenar</button>
+		
+								</div>
+								<h3>Trident Twist</h3>
+							
+								<p class="price">$0.65</p>
+							</div>
+						</div>
+						<!--  -->
+						<div class="card-product">
+							<div class="container-img">
+								<img src="productos/clorets 12.jpg" alt="clorets" />
+								<div class="button-group">
+								
+								</div>
+							</div>
+							<div class="content-card-product">
+								<div class="stars"><br><br><br><br><br><br><br><br><br><br>
+									<button class="btn btn-primary" onclick="agregarProducto('clorets', 0.40)">Ordenar</button>
+		
+								</div>
+								<h3>Cloret 20/12</h3>	
+								<p class="price">$0.40</p>
+							</div>
+						</div>
+	
+						<div class="card-product">
+							<div class="container-img">
+								<img src="productos/galleta ri.jpg" alt="galletari" />
+								<span class="discount"></span>
+								<div class="button-group">
+									
+								</div>
+							</div>
+							<div class="content-card-product">
+								<div class="stars"><br><br><br><br><br>
+									<button class="btn btn-primary" onclick="agregarProducto('galletari', 0.25)">Ordenar</button>
+		
+								</div>
+								<h3>Galleta rit</h3>
+								
+				
+								<p class="price">$0.25</p>
+							</div>
+						</div>
+						<div class="card-product">
+							<div class="container-img">
+								<img
+									src="productos/galletachiky.png"
+									alt="galletachiky"
+								/>
+								<span class="discount"></span>
+								<div class="button-group">
+									
+								</div>
+							</div>
+							<div class="content-card-product">
+								<div class="stars"><br><br><br><br><br>
+									<button class="btn btn-primary" onclick="agregarProducto('galletachiky', 0.25)">Ordenar</button>
+		
+								</div>
+								<h3>Galleta Chiky</h3>
+								<p class="price">$0.25</p>
+							</div>
+						</div>
+						<div class="card-product">
+							<div class="container-img">
+								<img src="productos/freegel.jpg" alt="freegel" />
+								<span class="discount"></span>
+								<div class="button-group">
+									
+								</div>
+							</div>
+							<div class="content-card-product">
+								<div class="stars"><br><br><br><br><br>
+									<button class="btn btn-primary" onclick="agregarProducto('fregel', 0.25)">Ordenar</button>
+		
+								</div>
+								<h3>Freegells</h3>
+							
+								<p class="price">$0.25</p>
+							</div>
+						</div>
+						<!-- Producto 1 -->
+						<div class="card-product">
+							<div class="container-img">
+								<img src="productos/saladinas.jpg" alt="saladinas" />
+								<span class="discount"></span>
+								<div class="button-group">
+								
+								</div>
+							</div>
+							<div class="content-card-product">
+								<div class="stars"><br><br><br><br><br>
+									<button class="btn btn-primary" onclick="agregarProducto('saladinas', 0.20)">Ordenar</button>
+		
+								</div>
+								<h3>Saladinas</h3>
+							
+								<p class="price">$0.20</p>
+							</div>
+						</div>
+						<div class="card-product">
+							<div class="container-img">
+								<img src="productos/vitalido.png" alt="vita" />
+								<span class="discount"></span>
+								<div class="button-group">
+									
+								</div>
+							</div>
+							<div class="content-card-product">
+								<div class="stars"><br><br><br><br><br><br><br><br><br>
+									<button class="btn btn-primary" onclick="agregarProducto('vita', 0.20)">Ordenar</button>
+		
+								</div>
+								<h3>Vita Lido</h3>
+								<p class="price">$0.20</p>
+							</div>
+						</div>
+				</div>
+					
+
+
+				<script src="productos.js"></script>
+					<script
+			src="https://kit.fontawesome.com/81581fb069.js"
+			crossorigin="anonymous"
+		></script>
+		<script src="ordenes.js"></script>
+		
+	</body>
+</html>

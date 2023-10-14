@@ -1,31 +1,24 @@
-// Función para agregar un producto a la orden
-function agregarProducto(nombreProducto, precio) {
-    const producto = {
-        nombre: nombreProducto,
-        precio: precio,
-        tiempoOrden: 0
-    };
-
-    // Agregar el producto a la orden
-    let ordenes = JSON.parse(localStorage.getItem('ordenes')) || [];
-    ordenes.push(producto);
-    localStorage.setItem('ordenes', JSON.stringify(ordenes));
-
-//setTimeout(function() {
-  //  window.location.href = 'ordenes.html';
-//}, 5000); 
-
-Swal.fire({
-    icon: 'success',
-    title: '¡Tu producto ha sido ordenado!',
-    //text: 'Gracias por tu pedido. Serás redirigido a la página de órdenes en breve.',
-   // timer: 2000, // 2000 milisegundos (2 segundos)
-    //timerProgressBar: true,
-    showConfirmButton: true, // Mostrar un botón "OK"
-    confirmButtonText: 'OK' // Personalizar el texto del botón
-}).then(function() {
-    //window.location.href = 'ordenes.html';
-});
-
-
+function ordenarProducto(productName, price) {
+    Swal.fire({
+        title: `¿Quieres realizar un pedido?`,
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Sí',
+        cancelButtonText: 'No',
+        timer: 15000, // 15 segundos
+        timerProgressBar: true, // Muestra una barra de progreso del temporizador
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire('Pedido realizado', 'Se ha realizado con éxito.', 'success');
+        }
+    });
 }
+
+const ordenarButtons = document.querySelectorAll(".btn.btn-primary");
+ordenarButtons.forEach((button) => {
+    const productName = button.getAttribute("data-product");
+    const price = parseFloat(button.getAttribute("data-price"));
+    button.addEventListener("click", function () {
+        ordenarProducto(productName, price);
+    });
+});

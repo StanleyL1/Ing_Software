@@ -1,166 +1,122 @@
-function ordenarProducto(productName, price) {
-    console.log(`Ordenando "${productName}" por $${price}`);
+function mostrarOrdenes() {
+    const ordenList = document.getElementById("orden-list");
+    ordenList.innerHTML = ""; // Limpiamos la lista antes de actualizarla
 
-            Swal.fire({
-                icon: 'question',
-                title: 'Producto ya en la orden',
-                text: `El producto "${nombre}" ya está en tu orden.`,
-                showCancelButton: true, // Mostrar botón de cancelar
-                confirmButtonText: 'Agregar de nuevo', // Texto del botón de confirmación
-                cancelButtonText: 'Cancelar' // Texto del botón de cancelar
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Producto agregado',
-                        text: `El producto "${nombre}" ha sido agregado de nuevo a tu orden.`
-                    });
-                    
-                    // Marcar como no realizada
-                    productoExistente.realizada = false;
+    // Recuperar las órdenes almacenadas en el almacenamiento local
+    const ordenes = JSON.parse(localStorage.getItem("ordenes")) || [];
 
-                    // Agregar uno más del mismo producto
-                    const nuevoProducto = {
-                        nombre: nombre,
-                        precio: precio,
-                        tiempoInicio: Date.now(),
-                        realizada: false
-                    };
-                    
-                    ordenes.push(nuevoProducto);
+    // Iterar sobre las órdenes y mostrarlas en la lista
+    ordenes.forEach((orden, index) => {
+        const listItem = document.createElement("li");
+        listItem.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
+        const tiempoActual = new Date().getTime();
+        const tiempoEntrada = new Date(orden.tiempo);
+        const tiempoTranscurrido = Math.floor((tiempoActual - tiempoEntrada) / 1000);
+        const tiempoRestante = Math.max(0, 10 - tiempoTranscurrido);
+        const tiempoMensaje = tiempoRestante > 0 ? `Entró hace ${tiempoTranscurrido} segundos. Estará lista en ${tiempoRestante} segundos` : "Tu orden está lista";
 
-                    // Guardar la nueva lista de órdenes en localStorage
-                    localStorage.setItem('ordenes', JSON.stringify(ordenes));
+        const tiempoTranscurridoReloj = obtenerReloj(tiempoTranscurrido);
+        const tiempoRestanteReloj = obtenerReloj(tiempoRestante);
 
-                    // Actualizar la vista de la orden
-                    mostrarOrden();
-                }
-            });
-        } else {
-            Swal.fire({
-                icon: 'success',
-                title: 'Orden realizada',
-                text: `Tu orden de "${nombre}" ha sido realizada.`
-            });
-            
-            // Si el producto no está en la orden, agregarlo
-            const nuevoProducto = {
-                nombre: nombre,
-                precio: precio,
-                tiempoInicio: Date.now(), // Iniciar el contador de tiempo
-                realizada: false // Marcar como no realizada
-            };
+        listItem.innerHTML = `
+            <div>
+                <h5 class="mb-1">Producto:</h5>
+                <p>${orden.product}</p>
+                <h5 class="mb-1">Precio:</h5>
+                <p>$${orden.price}</p>
+                <h5 class="mb-1">Tiempo de orden:</h5>
+                <p>Tiempo transcurrido: ${tiempoTranscurridoReloj}</p>
+                <p>Tiempo restante: ${tiempoRestanteReloj}</p>
+            </div>
+            <div>
+                <h5 class="mb-1">Cantidad:</h5>
+                <p>${orden.cantidad}</p>
+                <button class="btn btn-primary" onclick="agregarCantidad(${index})">+</button>
+                <button class="btn btn-danger" onclick="restarCantidad(${index})">-</button>
+                <h5 class="mb-1">Total:</h5>
+                <p>$${orden.price * orden.cantidad}</p>
+<button class="btn btn-danger" onclick="eliminarProducto(0)">Eliminar</button>
+            </div>`;
 
-            ordenes.push(nuevoProducto);
+        ordenList.appendChild(listItem);
+    });
+}
 
-            // Guardar la nueva lista de órdenes en localStorage
-            localStorage.setItem('ordenes', JSON.stringify(ordenes));
+// Función para obtener una representación en reloj del tiempo (HH:MM:SS)
+function obtenerReloj(tiempoSegundos) {
+    const horas = Math.floor(tiempoSegundos / 3600);
+    const minutos = Math.floor((tiempoSegundos % 3600) / 60);
+    const segundos = tiempoSegundos % 60;
+    return `${rellenarCeros(horas)}:${rellenarCeros(minutos)}:${rellenarCeros(segundos)}`;
+}
 
-            // Actualizar la vista de la orden
-            mostrarOrden();
-        }
-    } else {
-        Swal.fire({
-            icon: 'info',
-            title: 'Orden ya realizada',
-            text: `El producto "${nombre}" ya ha sido ordenado.`
-        });
+// Función para rellenar con ceros los valores de tiempo
+function rellenarCeros(valor) {
+    return valor < 10 ? `0${valor}` : valor;
+}
+function agregarCantidad(index) {
+    const ordenes = JSON.parse(localStorage.getItem("ordenes")) || [];
+    
+    if (index >= 0 && index < ordenes.length) {
+        // Aumenta la cantidad del producto en la posición 'index'
+        ordenes[index].cantidad++;
+
+        // Guarda la lista de órdenes actualizada en el almacenamiento local
+        localStorage.setItem("ordenes", JSON.stringify(ordenes));
+
+        // Muestra las órdenes actualizadas
+        mostrarOrdenes();
     }
 }
 
-// Función para mostrar la orden
-function mostrarOrden() {
-    const ordenContainer = document.getElementById('orden');
-    ordenContainer.innerHTML = '';
-
-    let ordenes = JSON.parse(localStorage.getItem('ordenes')) || [];
-    let total = 0; // Variable para calcular el total de precios
-
-    if (ordenes.length === 0) {
-        Swal.fire({
-            icon: 'info',
-            title: 'Tu orden está vacía',
-            text: 'Agrega productos a tu orden desde la página de productos.'
-        });
-    } else {
-        const tabla = document.createElement('table');
-        tabla.classList.add('table', 'table-striped');
-
-        tabla.innerHTML = `
-            <thead>
-                <tr>
-                    <th>Producto</th>
-                    <th>Tiempo de orden</th>
-                    <th>Precio</th>
-                    <th>Eliminar</th>
-                </tr>
-            </thead>
-            <tbody>
-                ${ordenes.map((producto, index) => {
-                    total += producto.precio;
-                    
-                    return `
-                        <tr>
-                            <td>${producto.nombre}</td>
-                            <td id="tiempo-${index}">0 segundos</td>
-                            <td>$${producto.precio.toFixed(2)}</td>
-
-                            <td>
-                                <button class="btn btn-danger" onclick="eliminarProducto('${producto.nombre}', ${index})">Eliminar</button>
-                            </td>
-                        </tr>
-                    `;
-                }).join('')}
-            </tbody>
-        `;
-
-        ordenContainer.appendChild(tabla);
-
-        // Mostrar el total
-        const totalElement = document.createElement('div');
-        totalElement.innerHTML = `<strong>Total:</strong> $${total.toFixed(2)}`;
-        totalElement.style.marginLeft = '31%'; // Aplicar un margen izquierdo de 12px
-        ordenContainer.appendChild(totalElement);
-
-        // Iniciar y actualizar el contador de tiempo para cada producto
-        ordenes.forEach((producto, index) => {
-            actualizarTiempo(index);
-        });
-    }
-}
-
-// Función para iniciar y actualizar el contador de tiempo
-function actualizarTiempo(index) {
-    const tiempoElement = document.getElementById(`tiempo-${index}`);
-    const producto = JSON.parse(localStorage.getItem('ordenes'))[index];
-
-    function actualizar() {
-        const tiempoTranscurrido = Math.floor((Date.now() - producto.tiempoInicio) / 1000);
-        tiempoElement.textContent = `${tiempoTranscurrido} segundos`;
-    }
-
-    // Llamamos a actualizar una vez para que el tiempo se muestre de inmediato
-    actualizar();
-
-    // Usamos setInterval para actualizar el tiempo cada segundo
-    setInterval(actualizar, 1000);
-}
-
-// Función para eliminar un producto de la orden
-function eliminarProducto(nombre, index) {
-    let ordenes = JSON.parse(localStorage.getItem('ordenes')) || [];
-
-    // Eliminar el producto de la orden
+// Función para eliminar un producto de las órdenes
+function eliminarProducto(index) {
+    const ordenes = JSON.parse(localStorage.getItem("ordenes")) || [];
     ordenes.splice(index, 1);
 
-    // Guardar la nueva lista de órdenes en localStorage
-    localStorage.setItem('ordenes', JSON.stringify(ordenes));
+    // Guardar la lista de órdenes actualizada en el almacenamiento local
+    localStorage.setItem("ordenes", JSON.stringify(ordenes));
 
-    // Actualizar la vista de la orden
-    mostrarOrden();
+    // Mostrar las órdenes actualizadas
+    mostrarOrdenes();
 }
 
-// Mostrar la orden al cargar la página
-mostrarOrden();
+// Función para agregar más cantidad a una orden
+function agregarProducto(productName, price) {
+    // Obtener la lista de órdenes existente o crear una nueva si no existe
+    let ordenes = JSON.parse(localStorage.getItem("ordenes")) || [];
 
+    // Agregar el nuevo producto a la lista de órdenes
+    const orden = {
+        product: productName,
+        price: price,
+        tiempo: new Date(), // Usar new Date() en lugar de new Date().toString()
+        cantidad: 1, // Inicializar la cantidad en 1
+    };
 
+    ordenes.push(orden);
+
+    // Guardar la lista de órdenes en el almacenamiento local
+    localStorage.setItem("ordenes", JSON.stringify(ordenes));
+
+    // Redirigir a la página de órdenes
+}
+
+// Función para restar cantidad a una orden
+function restarCantidad(index) {
+    const ordenes = JSON.parse(localStorage.getItem("ordenes")) || [];
+    if (ordenes[index].cantidad > 0) {
+        ordenes[index].cantidad--;
+        // Guardar la lista de órdenes actualizada en el almacenamiento local
+        localStorage.setItem("ordenes", JSON.stringify(ordenes));
+    }
+
+    // Mostrar las órdenes actualizadas
+    mostrarOrdenes();
+}
+
+// Mostrar las órdenes cuando se carga la página
+mostrarOrdenes();
+
+// Actualizar el tiempo cada segundo
+setInterval(mostrarOrdenes, 1000);
