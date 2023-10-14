@@ -1,12 +1,6 @@
-function agregarProducto(nombre, precio) {
-    // Obtener la lista de órdenes del almacenamiento local
-    let ordenes = JSON.parse(localStorage.getItem('ordenes')) || [];
+function ordenarProducto(productName, price) {
+    console.log(`Ordenando "${productName}" por $${price}`);
 
-    // Verificar si el producto ya está en la orden
-    const productoExistente = ordenes.find(producto => producto.nombre === nombre);
-
-    if (!productoExistente || !productoExistente.realizada) {
-        if (productoExistente) {
             Swal.fire({
                 icon: 'question',
                 title: 'Producto ya en la orden',
