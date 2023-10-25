@@ -1,19 +1,19 @@
-<?php include 'header.php'; ?>
+<?php 
+include 'header.php'; 
+?>
 
-        <div class="container mt-5">
-            <div class="jumbotron">
-                <h1 class="display-3">¡Bienvenido a Escolarbite!</h1>
-                <p  class="head h4"> ordena y ven a disfrutar de deliciosos almuerzos despues de tus clases 
-                    o que tal pedir un desayuno antes de empezar!.</p>
-                <hr class="my-4 ">
-                <p class="h5">Explora nuestroS locales y realiza tus pedidos en línea. ¡Te esperamos!</p>
-              <br>
-              <p class="h5">Elige donde pedir en las siguientes opciones!!</p>
-                <a class="btn btn-primary btn-lg" href="Pepes.html" role="button">Pepe´s Coffe</a>
-                <a class="btn btn-primary btn-lg" href="chalet.html" role="button">Chalet UGB</a>
-
-            </div>
-        </div>
+<div class="container mt-5">
+    <div class="jumbotron">
+        <h1 class="display-3">¡Bienvenido a Escolarbite!</h1>
+        <p class="head h4">Ordena y ven a disfrutar de deliciosos almuerzos después de tus clases o pide un desayuno antes de comenzar.</p>
+        <hr class="my-4">
+        <p class="h5">Explora nuestros locales y realiza tus pedidos en línea. ¡Te esperamos!</p>
+        <br>
+        <p class="h5">Elige donde pedir en las siguientes opciones!!</p>
+        <a class="btn btn-primary btn-lg" href="Pepes.php" role="button">Pepe's Coffe</a>
+        <a class="btn btn-primary btn-lg" href="chalet.php" role="button">Chalet UGB</a>
+    </div>
+</div>
         
         
           

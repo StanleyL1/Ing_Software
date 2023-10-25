@@ -1,43 +1,50 @@
 let alertaMostrada = false; // Variable para rastrear si la alerta ya se mostró
-
 function mostrarOrdenes() {
     const ordenList = document.getElementById("orden-list");
-    ordenList.innerHTML = ""; // Limpiamos la lista antes de actualizarla
+    ordenList.innerHTML = "";
 
-    // Recuperar las órdenes almacenadas en el almacenamiento local
-    const ordenes = JSON.parse(localStorage.getItem("ordenes")) || [];
+    // Obtener el nombre de usuario desde la variable JavaScript generada en PHP
+    const nombreUsuario = "<?php echo isset($usuario) ? $usuario : ''; ?>";
 
-    // Iterar sobre las órdenes y mostrarlas en la lista
+    // Crear un párrafo para mostrar el cliente y el nombre de usuario
+    const clienteInfo = document.createElement("p");
+    clienteInfo.innerText = `Cliente: ${nombreUsuario}`;
+    ordenList.appendChild(clienteInfo);
     ordenes.forEach((orden, index) => {
         const listItem = document.createElement("li");
         listItem.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
         const tiempoActual = new Date().getTime();
         const tiempoEntrada = new Date(orden.tiempo);
         const tiempoTranscurrido = Math.floor((tiempoActual - tiempoEntrada) / 1000);
-        const tiempoRestante = Math.max(0, 10 - tiempoTranscurrido); // 600 segundos (10 minutos) el contador funciona con segundos 60s es un minuto
+        const tiempoRestante = Math.max(0, 60 - tiempoTranscurrido); // 600 segundos (10 minutos) el contador funciona con segundos 60s es un minuto
         const tiempoMensaje = tiempoRestante > 0 ? `Entró hace ${tiempoTranscurrido} segundos. Estará lista en ${tiempoRestante} segundos` : "Orden Lista";
 
         const tiempoTranscurridoReloj = obtenerReloj(tiempoTranscurrido);
         const tiempoRestanteReloj = obtenerReloj(tiempoRestante);
 
         listItem.innerHTML = `
-            <div>
-                <h5 class="mb-1">Producto:</h5>
-                <p>${orden.product}</p>
-                <h5 class="mb-1">Precio:</h5>
-                <p>$${orden.price}</p>
-                <h5 class="mb-1">Tiempo de orden:</h5>
-                <p>Tiempo restante: ${tiempoRestanteReloj}</p>
-            </div>
-            <div>
-                <h5 class="mb-1">Cantidad:</h5>
-                <p>${orden.cantidad}</p>
-                <button class="btn btn-primary" onclick="agregarCantidad(${index})">+</button>
-                <button class="btn btn-danger" onclick="restarCantidad(${index})">-</button>
-                <h5 class="mb-1">Total:</h5>
-                <p>$${orden.price * orden.cantidad}</p>
-                <button class="btn btn-danger" onclick="eliminarProducto(${index})">Eliminar</button>
-            </div>`;
+    <div>
+        <h5 class="mb-1">Cliente:</h5>
+        <p>${nombreUsuario}</p>
+    </div>
+    <div>
+        <h5 class="mb-1">Producto:</h5>
+        <p>${orden.product}</p>
+        <h5 class="mb-1">Precio:</h5>
+        <p>$${orden.price}</p>
+        <h5 class="mb-1">Tiempo de orden:</h5>
+        <p>Tiempo restante: ${tiempoRestanteReloj}</p>
+    </div>
+    <div>
+        <h5 class="mb-1">Cantidad:</h5>
+        <p>${orden.cantidad}</p>
+        <button class="btn btn-primary" onclick="agregarCantidad(${index})">+</button>
+        <button class="btn btn-danger" onclick="restarCantidad(${index})">-</button>
+        <h5 class="mb-1">Total:</h5>
+        <p>$${orden.price * orden.cantidad}</p>
+        <button class="btn btn-danger" onclick="eliminarProducto(${index})">Eliminar</button>
+    </div>`;
+
 
         ordenList.appendChild(listItem);
 

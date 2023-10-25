@@ -1,39 +1,33 @@
 <?php 
+session_start(); 
 
 include("conexion_be.php");
 
 $usuario = $_POST['usuario'];
 $contraseña = $_POST['contraseña'];
 
-
-
 $usuario = mysqli_real_escape_string($conexion, $usuario);
 
-$resultado = mysqli_query($conexion, "SELECT contraseña FROM usuarios WHERE usuario = '$usuario'");
+$resultado = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario = '$usuario'");
+
 if ($resultado && mysqli_num_rows($resultado) > 0) {
     $row = mysqli_fetch_assoc($resultado);
     $contraseña_hasheada = $row['contraseña'];
+    $_SESSION['usuario'] = $row['usuario'];
 
-   }
+      
 
-if (password_verify($contraseña, $contraseña_hasheada)) {
-    session_start();
+        header("location: ../inicio.php");
+    } else {
+        echo '
+        <script>
+        alert("Contraseña incorrecta");
+        window.location = "../Login.php";
+        </script>
+        ';
+        exit;
+    }
 
-    $row = mysqli_fetch_assoc($resultado);
-    $nombre_usuario = $row['nombre_de_usuario'];
 
-    $_SESSION['nombre_usuario'] = $nombre_usuario;
-
-    header("location: ../inicio.php");
-    exit;
-}else {
-    echo '
-    <script>
-    alert("Vaya.. parece que no hemos encontrado este usuario, verifique los datos proporcionados");
-    window.location = "../login.php";
-    </script>
-    ';
-    exit;
-}
 
 ?>

@@ -1,39 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0"
-		/>
-		<title>Escolarbite</title>
-		<link rel="stylesheet" href="styles.css" />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-    <script
-			src="https://kit.fontawesome.com/81581fb069.js"
-			crossorigin="anonymous"
+<?php include 'header.php'; ?>
 
-			
-		></script>
-	</head>
 	<style>
 		
 
   .card-product {
-    width: calc( 200px);
+    width: 100%;
     margin: 10px;
     border: 1px solid #ddd; 
-    padding: 1px;
+    padding: 10px;
     text-align: center;
   }
 
 		 
 
         .container-img img {
-            max-width: 200%; 
+            max-width: 100%; 
             height: auto; 
+			background-repeat: no-repeat;
         }
 
       
@@ -42,63 +25,13 @@
             font-weight: bold;
         }
         .titulo {
-            font-size: 44px;
+            font-size: 24px; /* Reducimos el tamaño del título */
             font-weight: bold;
 			color: white;
         }
 	</style>
     
-	<body>
-		<header>
-			<div class="container-hero">
-				<div class="container hero">
-					<div class="customer-support">
-						<i class="fa-solid fa-headset"></i>
-						<div class="content-customer-support">
-							<span class="text">Soporte al cliente</span>
-							<span class="number">7260-2346</span>
-						</div>
-					</div>
-
-					<div class="container-logo">
-						<i class="fa-solid fa-utensils fa-beat"></i>
-						<br>
-						<h1 class="logo"><a href="Inicio.php">Escolarbite</a></h1>
-					</div>
-
-					<div class="container-user">
-						<i class="fa-solid fa-user"></i>
-						<a href="ordenes.html" class="fa-solid fa-basket-shopping"></a>
-						<div class="content-shopping-cart">
-							<span class="text">Carrito</span>
-							<div id="order-count">0</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="container-navbar">
-				<nav class="navbar container">
-					<i class="fa-solid fa-bars"></i>
-					<ul class="menu">
-						<li><a href="Inicio.php">Inicio</a></li>
-						<li><a href="Pepes.html">Pepe´ Coffe</a></li>
-						<li><a href="chalet.html">Chalet UGB</a></li>
-						<li><a href="ordenes.html">Ordenes</a></li>
-						<li><a href="Sugerencias.html">Sugerencias</a></li>
-						
-
-					</ul>
-
-					<form class="search-form">
-						<input type="search" placeholder="Buscar..." />
-						<button class="btn-search">
-							<i class="fa-solid fa-magnifying-glass"></i>
-						</button>
-					</form>
-				</nav>
-			</div>
-		</header>
+		
         
 	<section class="banner">
 		<div class="content-banner">
@@ -110,10 +43,9 @@
 	</section>
 
 	<section class="container top-categories">
-		<h1 class="heading-1">Catalogo</h1>
-		<div class="container-options">
-		</div>
-		<div class="container-products">
+        <h1 class="heading-1">Catálogo</h1>
+        <div class="container-options"></div>
+        <div class="container-products">
 			
 			<div class="card-product">
 				<div class="container-img">
@@ -142,7 +74,7 @@
 
 				</div>
 				<div class="content-card-product">
-					<div class="stars">
+					<div class="stars"><br><br>
 						<button class="btn btn-primary" onclick="agregarProducto('Pupusas', 0.75)">Ordenar</button>
 
 					</div>
@@ -159,7 +91,7 @@
 
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br>
+					<div class="stars"><br><br><br><br><br>
 						<button class="btn btn-primary" onclick="agregarProducto('Nachos', 2.00)">Ordenar</button>
 
 					</div>
@@ -193,7 +125,7 @@
 
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br>
+					<div class="stars"><br><br><br><br><br>
 						<button class="btn btn-primary" onclick="agregarProducto('Palomitas', 1.00)">Ordenar</button>
 
 					</div>
@@ -210,7 +142,7 @@
 
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br>
+					<div class="stars"><br><br><br><br><br>
 						<button class="btn btn-primary" onclick="agregarProducto('Panpollo', 0.50)">Ordenar</button>
 
 					</div>
@@ -227,7 +159,7 @@
 
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br><br>
+					<div class="stars"><br><br><br><br><br><br>
 						<button class="btn btn-primary" >Ordenar</button>
 
 					</div>
@@ -261,7 +193,7 @@
 					<img src="productos/oreo.jpg" alt="Oreo" />
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br><br>
+					<div class="stars"><br><br><br><br><br><br><br><br><br><br>
 						<button class="btn btn-primary" onclick="agregarProducto('Oreo', 0.35)">Ordenar</button>
 					</div>
 					<h3>Oreo</h3>
@@ -271,11 +203,11 @@
 
 			<div class="card-product">
 				<div class="container-img"><br>
-					<br><br><br><br><br>
+					<br><br><br><br><br><br><br><br>
 					<img src="productos/gelatina.jpg" alt="Gelatina" />
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br>
+					<div class="stars"><br><br><br><br><br>
 						<button class="btn btn-primary" onclick="agregarProducto('Gelatina', 0.50)">Ordenar</button>
 					</div>
 					<h3>Gelatina</h3>
@@ -284,7 +216,7 @@
 			</div>			
 
 			<div class="card-product">
-				<div class="container-img"><br><br>
+				<div class="container-img"><br><br><br><br>
 					<img src="productos/fruta.jpg" alt="Fruta" />
 				</div>
 				<div class="content-card-product">
@@ -340,7 +272,7 @@
 					<img src="productos/chocobananos.jpg" alt="Pastel" />
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br>
+					<div class="stars"><br><br><br><br><br><br>
 						<button class="btn btn-primary" onclick="agregarProducto('chocobananos', 0.75)">Ordenar</button>
 					</div>
 					<h3>Chocobananos</h3>
@@ -349,8 +281,8 @@
 			</div>
 		</div>
 		<section class="container specials">
-			<h1 class="heading-1">Bebidas</h1>
-		<div class="container-products">
+        <h1 class="heading-1">Bebidas</h1>
+        <div class="container-products">
 			<div class="card-product">
 				<div class="container-img">
 					<img src="productos/tamarindo.jpg" alt="Fresco tamarindo" />
@@ -360,7 +292,7 @@
 					</div>
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br>
+					<div class="stars"><br><br><br><br><br><br><br>
 						<button class="btn btn-primary" onclick="agregarProducto('Fresco tamarindo', 0.50)">Ordenar</button>
 
 					</div>
@@ -379,7 +311,7 @@
 					</div>
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br>
+					<div class="stars"><br><br><br><br><br><br><br>
 						<button class="btn btn-primary" onclick="agregarProducto('Fresco horchata', 0.50)">Ordenar</button>
 
 					</div>
@@ -419,7 +351,7 @@
 					</div>
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br><br>
+					<div class="stars"><br><br><br><br><br><br><br><br>
 						<button class="btn btn-primary" onclick="agregarProducto('Fresco jamaica', 0.50)">Ordenar</button>
 
 					</div>
@@ -479,7 +411,7 @@
 					</div>
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br><br>
+					<div class="stars"><br><br><br><br><br><br>
 						<button class="btn btn-primary" onclick="agregarProducto('cafe', 0.25)">Ordenar</button>
 
 					</div>

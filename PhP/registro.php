@@ -7,7 +7,7 @@ include 'conexion_be.php';
  $correo = $_POST['correo']   ;
  $usuario = $_POST['usuario'];
  $contraseña = $_POST['contraseña'];
- $contraseña = hash('sha256', $contraseña);/* con este se encripta la contraseña*/
+ $contraseña = password_hash($_POST['contraseña'], PASSWORD_DEFAULT);
 
  $query = "INSERT INTO usuarios(nombre_completo, correo, usuario, contraseña) 
            VALUES ('$nombre_completo', '$correo', '$usuario', '$contraseña')";

@@ -62,7 +62,6 @@ html {
 
 .container-logo {
 	display: flex;
-	align-items: center;
 	gap: 0.5rem;
 }
 
@@ -70,13 +69,7 @@ html {
 	font-size: 3rem;
 }
 
-.container-logo h1 a {
-	text-decoration: none;
-	color: #000;
-	font-size: 3rem;
-	text-transform: uppercase;
-	letter-spacing: -1px;
-}
+
 
 .container-user {
 	display: flex;
