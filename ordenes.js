@@ -1,3 +1,5 @@
+let alertaMostrada = false; // Variable para rastrear si la alerta ya se mostró
+
 function mostrarOrdenes() {
     const ordenList = document.getElementById("orden-list");
     ordenList.innerHTML = ""; // Limpiamos la lista antes de actualizarla
@@ -12,8 +14,8 @@ function mostrarOrdenes() {
         const tiempoActual = new Date().getTime();
         const tiempoEntrada = new Date(orden.tiempo);
         const tiempoTranscurrido = Math.floor((tiempoActual - tiempoEntrada) / 1000);
-        const tiempoRestante = Math.max(0, 10 - tiempoTranscurrido);
-        const tiempoMensaje = tiempoRestante > 0 ? `Entró hace ${tiempoTranscurrido} segundos. Estará lista en ${tiempoRestante} segundos` : "Tu orden está lista";
+        const tiempoRestante = Math.max(0, 10 - tiempoTranscurrido); // 600 segundos (10 minutos) el contador funciona con segundos 60s es un minuto
+        const tiempoMensaje = tiempoRestante > 0 ? `Entró hace ${tiempoTranscurrido} segundos. Estará lista en ${tiempoRestante} segundos` : "Orden Lista";
 
         const tiempoTranscurridoReloj = obtenerReloj(tiempoTranscurrido);
         const tiempoRestanteReloj = obtenerReloj(tiempoRestante);
@@ -25,7 +27,6 @@ function mostrarOrdenes() {
                 <h5 class="mb-1">Precio:</h5>
                 <p>$${orden.price}</p>
                 <h5 class="mb-1">Tiempo de orden:</h5>
-                <p>Tiempo transcurrido: ${tiempoTranscurridoReloj}</p>
                 <p>Tiempo restante: ${tiempoRestanteReloj}</p>
             </div>
             <div>
@@ -35,12 +36,23 @@ function mostrarOrdenes() {
                 <button class="btn btn-danger" onclick="restarCantidad(${index})">-</button>
                 <h5 class="mb-1">Total:</h5>
                 <p>$${orden.price * orden.cantidad}</p>
-<button class="btn btn-danger" onclick="eliminarProducto(0)">Eliminar</button>
+                <button class="btn btn-danger" onclick="eliminarProducto(${index})">Eliminar</button>
             </div>`;
 
         ordenList.appendChild(listItem);
+
+       
+        if (tiempoRestante === 0 && !alertaMostrada) {
+            alertaMostrada = true; 
+            Swal.fire('Orden Lista', 'Tu orden está lista para ser recogida.', 'success');
+        }
     });
 }
+
+
+mostrarOrdenes();
+
+setInterval(mostrarOrdenes, 1000);
 
 // Función para obtener una representación en reloj del tiempo (HH:MM:SS)
 function obtenerReloj(tiempoSegundos) {
@@ -56,10 +68,10 @@ function rellenarCeros(valor) {
 }
 function agregarCantidad(index) {
     const ordenes = JSON.parse(localStorage.getItem("ordenes")) || [];
-    
+
     if (index >= 0 && index < ordenes.length) {
-        // Aumenta la cantidad del producto en la posición 'index'
-        ordenes[index].cantidad++;
+        // Duplica la cantidad del producto en la posición 'index'
+        ordenes[index].cantidad += 1;
 
         // Guarda la lista de órdenes actualizada en el almacenamiento local
         localStorage.setItem("ordenes", JSON.stringify(ordenes));
@@ -68,6 +80,7 @@ function agregarCantidad(index) {
         mostrarOrdenes();
     }
 }
+
 
 // Función para eliminar un producto de las órdenes
 function eliminarProducto(index) {
@@ -99,24 +112,19 @@ function agregarProducto(productName, price) {
     // Guardar la lista de órdenes en el almacenamiento local
     localStorage.setItem("ordenes", JSON.stringify(ordenes));
 
-    // Redirigir a la página de órdenes
 }
 
-// Función para restar cantidad a una orden
 function restarCantidad(index) {
     const ordenes = JSON.parse(localStorage.getItem("ordenes")) || [];
-    if (ordenes[index].cantidad > 0) {
+    if (index >= 0 && index < ordenes.length && ordenes[index].cantidad > 1) {
         ordenes[index].cantidad--;
-        // Guardar la lista de órdenes actualizada en el almacenamiento local
         localStorage.setItem("ordenes", JSON.stringify(ordenes));
     }
 
-    // Mostrar las órdenes actualizadas
     mostrarOrdenes();
 }
 
-// Mostrar las órdenes cuando se carga la página
+
 mostrarOrdenes();
 
-// Actualizar el tiempo cada segundo
 setInterval(mostrarOrdenes, 1000);

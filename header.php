@@ -1,6 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+        
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta
@@ -34,18 +36,27 @@
 						<br>
 						<h1 class="logo"><a href="Inicio.php">Escolarbite</a></h1>
 					</div>
+                   
+                    <div class="container-user">
+    <a href="ordenes.html" class="fa-solid fa-basket-shopping"></a>
+    <div class="content-shopping-cart">
+        <span class="text">Carrito</span>
+        <div id="order-count">0</div>
+    </div>
+    <?php
+    include 'PhP/conexion_be.php';
+    session_start(); 
 
-					<div class="container-user">
-						<i class="fa-solid fa-user"></i>
-						<a href="ordenes.html" class="fa-solid fa-basket-shopping"></a>
-						<div class="content-shopping-cart">
-							<span class="text">Carrito</span>
-							<div id="order-count">0</div>
-						</div>
-					</div>
+    if (isset($nombre_usuario)) {
+        echo '<i class="fa-solid fa-user"></i>';
+        echo '<span>Bienvenido, ' . $nombre_usuario . '</span>';
+    }
+    ?>
+</div>
 				</div>
 			</div>
-
+            
+            
 			<div class="container-navbar">
 				<nav class="navbar container">
 					<i class="fa-solid fa-bars"></i>
@@ -68,25 +79,3 @@
 				</nav>
 			</div>
 		</header>
-		<div class="container mt-5">
-			<h1>Órdenes</h1>
-			<ul id="orden-list" class="list-group mt-3">
-
-
-
-
-			</ul>
-		</div>
- 
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
-    <script src="ordenes.js"></script>
-	<script src="productos.js"></script>
-
-
-</body>
-</html>

@@ -1,6 +1,6 @@
 function ordenarProducto(productName, price) {
     Swal.fire({
-        title: `¿Quieres realizar un pedido?`,
+        title: `Quieres ordenar este producto?`,
         icon: 'question',
         showCancelButton: true,
         confirmButtonText: 'Sí',
@@ -9,7 +9,7 @@ function ordenarProducto(productName, price) {
         timerProgressBar: true, // Muestra una barra de progreso del temporizador
     }).then((result) => {
         if (result.isConfirmed) {
-            Swal.fire('Pedido realizado', 'Se ha realizado con éxito.', 'success');
+            Swal.fire('Pedido realizado','', 'success');
         }
     });
 }

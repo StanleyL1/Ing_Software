@@ -1,0 +1,57 @@
+<?php 
+ 
+include 'conexion_be.php';
+
+
+ $nombre_completo =  $_POST['nombre_completo'];
+ $correo = $_POST['correo']   ;
+ $usuario = $_POST['usuario'];
+ $contraseña = $_POST['contraseña'];
+ $contraseña = hash('sha256', $contraseña);/* con este se encripta la contraseña*/
+
+ $query = "INSERT INTO usuarios(nombre_completo, correo, usuario, contraseña) 
+           VALUES ('$nombre_completo', '$correo', '$usuario', '$contraseña')";
+
+$Verificar_correo = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo = '$correo'  ");
+if (mysqli_num_rows($Verificar_correo) > 0) {
+    echo '
+    <script>
+    alert("Este correo ya esta en uso");
+    window.location = "../login.php";
+    </script>
+    ';
+exit();
+}
+
+$Verificar_usuario = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario = '$usuario' ");
+if (mysqli_num_rows($Verificar_usuario) > 0) {
+    echo '
+    <script>
+    alert("Este usuario ya existe");
+    window.location = "../login.php";
+    </script>
+    ';
+exit();
+}
+
+
+$ejecutar = mysqli_query($conexion, $query);
+
+if ($ejecutar){
+    echo '
+    <script>
+    alert("Te has registrado exitosamente");
+    window.location = "../login.php";
+    </script>
+    ';
+}else{
+    echo '
+    <script>
+    alert("Oh no, parece que algo fallo");
+    window.location = "../login.php";
+    </script>
+    ';
+ }
+
+ mysqli_close($conexion);
+ ?>
