@@ -13,7 +13,6 @@
 				<h1 class="heading-1">Desayunos</h1>
 
 				<div class="container-products">
-					<!-- Producto 1 -->
 					<div class="card-product">
 						<div class="container-img">
 							<img src="productos/frijoles.jpg" alt="frijoles" />
@@ -52,7 +51,6 @@
 							<p class="price">$0.75</p>
 						</div>
 					</div>
-					<!-- Producto 2 -->
 					<div class="card-product">
 						<div class="container-img">
 							<img
@@ -76,7 +74,6 @@
 						</div>
 					</div>
 					
-					<!--  -->
 					<div class="card-product">
 						<div class="container-img">
 							<img src="productos/huevo.jpg" alt="Huevo" />
@@ -95,7 +92,6 @@
 							<p class="price">$0.60</p>
 						</div>
 					</div>
-					<!--  -->
 					<div class="card-product">
 						<div class="container-img">
 							<img src="productos/tortilla.jpg" alt="Tortilla" />
@@ -172,7 +168,6 @@
 							<p class="price">$0.95</p>
 						</div>
 					</div>
-					<!-- Producto 1 -->
 					<div class="card-product">
 						<div class="container-img">
 							<img src="productos/cafe 8 onz.png" alt="cafe 8 onz" />

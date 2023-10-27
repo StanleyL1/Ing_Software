@@ -69,7 +69,7 @@ function agregarCantidad(index) {
     const ordenes = JSON.parse(localStorage.getItem("ordenes")) || [];
 
     if (index >= 0 && index < ordenes.length) {
-        // Duplica la cantidad del producto en la posición 'index'
+        // Suma 1 a la cantidad del producto en la posición 'index'
         ordenes[index].cantidad += 1;
 
         // Guarda la lista de órdenes actualizada en el almacenamiento local
@@ -79,6 +79,7 @@ function agregarCantidad(index) {
         mostrarOrdenes();
     }
 }
+
 
 // Función para eliminar un producto de las órdenes
 function eliminarProducto(index) {

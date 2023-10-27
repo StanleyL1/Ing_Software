@@ -13,7 +13,6 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
     $row = mysqli_fetch_assoc($resultado);
     $contraseña_hasheada = $row['contraseña'];
     
-    // Verificar la contraseña usando password_verify
     if (password_verify($contraseña, $contraseña_hasheada)) {
         $_SESSION['usuario'] = $row['usuario'];
         header("location: ../inicio.php");

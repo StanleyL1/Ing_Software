@@ -28,9 +28,7 @@ a {
 }
 	.user-name {
     font-size: 17px; /* Elige un tamaño de fuente adecuado */
-    font-weight: bold; /* Si deseas que el nombre sea más prominente */
-}
-
+    font-weight: bold; }
 
 .container-hero {
 }
@@ -69,7 +67,7 @@ a {
             Ajustes
         </button>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="editar_perfil.php">Perfil</a></li>
+            <li><a class="dropdown-item" href="perfil.php">Perfil</a></li>
             <li><a class="dropdown-item" href="Login.php">Cerrar Sesión</a></li>
         </ul>
     </div>
@@ -91,12 +89,7 @@ a {
                     <li><a href="Sugerencias.php">Sugerencias</a></li>
                 </ul>
 
-                <form class="search-form">
-                    <input type="search" placeholder="Buscar..." />
-                    <button class="btn-search">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                </form>
+              
             </nav>
         </div>
     </header>

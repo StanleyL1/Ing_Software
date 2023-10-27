@@ -25,7 +25,7 @@
             font-weight: bold;
         }
         .titulo {
-            font-size: 24px; /* Reducimos el tamaño del título */
+            font-size: 24px; 
             font-weight: bold;
 			color: white;
         }
