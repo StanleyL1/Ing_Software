@@ -9,6 +9,7 @@ $contraseña = $_POST['contraseña'];
 $usuario = mysqli_real_escape_string($conexion, $usuario);
 
 $resultado = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario = '$usuario'");
+/*$resultado = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo = '$correo'");*/
 
 if ($resultado && mysqli_num_rows($resultado) > 0) {
     $row = mysqli_fetch_assoc($resultado);
@@ -18,16 +19,19 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
       
 
         header("location: ../inicio.php");
-    } else {
+      
+       
+       } else {
         echo '
         <script>
-        alert("Contraseña incorrecta");
+        alert("Correo incorrecto");
         window.location = "../Login.php";
         </script>
         ';
         exit;
-    }
-
+        
+       }
+  
 
 
 ?>

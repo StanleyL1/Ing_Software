@@ -35,13 +35,13 @@ main{
     justify-content: center;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    background-color: rgba(246, 255, 0, 0.5);
+    background-color:  rgb(5 102 190 / 71%);
 
 }
 
 .caja__trasera div{
     margin: 100px 40px;
-    color: rgb(238, 11, 11);
+    color: rgb(255, 255, 255);
     transition: all 500ms;
 }
 
@@ -126,7 +126,7 @@ main{
     background: #46A2FD;
     font-weight: 600;
     cursor: pointer;
-    color: rgb(255, 0, 0);
+    color: rgb(32, 31, 31);
     outline: none;
 }
 
