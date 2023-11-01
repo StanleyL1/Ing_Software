@@ -57,9 +57,7 @@ include 'header.php';
                             <h2>Acerca de Nosotros</h2>
                             <p>Somos un local de comida ubicado en la Universidad Gerardo Barrios de Usulután. enfrente del parqueo numero 1, Nuestra misión es ofrecer a nuestros clientes una experiencia culinaria única con platos deliciosos y frescos.</p>
                         </div>
-                        <div class="col-md-6">
-                            <img src="Foto.jpg" class="img-fluid" alt="Foto">
-                        </div>
+                       
                     </div>
                 </div>
             </section>

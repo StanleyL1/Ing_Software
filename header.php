@@ -67,7 +67,7 @@ a {
             Ajustes
         </button>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="perfil.php">Perfil</a></li>
+        <!--<li><a class="dropdown-item" href="perfil.php">Perfil</a></li>-->
             <li><a class="dropdown-item" href="Login.php">Cerrar Sesión</a></li>
         </ul>
     </div>
@@ -87,6 +87,7 @@ a {
                     <li><a href="chalet.php">Chalet UGB</a></li>
                     <li><a href="ordenes.php">Ordenes</a></li>
                     <li><a href="Sugerencias.php">Sugerencias</a></li>
+                 
                 </ul>
 
               

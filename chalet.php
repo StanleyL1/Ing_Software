@@ -1,5 +1,42 @@
 <?php include 'header.php'; ?>
-<style></style>
+<style>
+
+  .container-products {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card-product {
+    width: 250px; /* Establece el ancho fijo deseado */
+    margin: 10px; /* Espacio entre los productos */
+    border: 1px solid #ccc; /* Borde opcional */
+  }
+
+  .container-img {
+    max-height: 200px; /* Establece la altura máxima para la imagen */
+    text-align: center;
+  }
+
+  .container-img img {
+    max-width: 100%;
+    max-height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .content-card-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .price {
+    text-align: center;
+  }
+</style>
+
+
 		<section class="banner">
 			<div class="content-banner">
 			
