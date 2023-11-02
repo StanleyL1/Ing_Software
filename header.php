@@ -1,12 +1,11 @@
 <?php
 session_start();
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escolarbite</title>
@@ -14,36 +13,39 @@ session_start();
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 </head>
-<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
-<script>
-    $(document).ready(function() {
-        $('.dropdown-toggle').dropdown();
-        
-    });
-</script>
 
+<body>
+    <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('.dropdown-toggle').dropdown();
+        });
+    </script>
 
+    <style>
+        a {
+            color: black;
+        }
 
-<style>
-a {
-    color: black;
-}
-	.user-name {
-    font-size: 17px; /* Elige un tamaño de fuente adecuado */
-    font-weight: bold; }
+        .user-name {
+            font-size: 17px;
+            font-weight: bold;
+        }
 
-.container-hero {
-}
+        .container-hero {
+        }
 
-@media (max-width: 768px) {
-    .container-hero {
-    }
-}
-.titulo{color: white;}
+        @media (max-width: 768px) {
+            .container-hero {
+            }
+        }
 
-</style>
+        .titulo {
+            color: white;
+        }
+    </style>
+
     <header>
         <div class="container-hero">
             <div class="container hero">
@@ -55,30 +57,24 @@ a {
                     </div>
                 </div>
 
-				<div class="container-logo" style="text-align: center;">
-    <i class="fa-solid fa-utensils fa-beat" style="margin-left: 150px;"></i>
-    <br>
-    <h1 class="logo"><a href="Inicio.php">Escolarbite</a></h1>
-</div>
+                <div class="container-logo" style="text-align: center;">
+                    <i class="fa-solid fa-utensils fa-beat" style="margin-left: 150px;"></i>
+                    <br>
+                    <h1 class="logo"><a href="Inicio.php">Escolarbite</a></h1>
+                </div>
 
-				
-				<p class="d-flex">
-				<div class="btn-group h2">
-    <i class="fas fa-user user-name"></i> 
-    <span class="user-name">
-    <?php echo htmlspecialchars($_SESSION['nombre_completo']); ?></span>
-        <button class="btn btn-secundary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Ajustes
-        </button>
-        <ul class="dropdown-menu">
-        <!--<li><a class="dropdown-item" href="perfil.php">Perfil</a></li>-->
-            <li><a class="dropdown-item" href="Login.php">Cerrar Sesión</a></li>
-        </ul>
-    </div>
-</p>
-
-
-
+                <p class="d-flex">
+                    <div class="btn-group h2">
+                        <i class="fas fa-user user-name"></i>
+                        <span class="user-name"><?php echo htmlspecialchars($_SESSION['nombre_completo']); ?></span>
+                        <button class="btn btn-secundary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Ajustes
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Login.php">Cerrar Sesión</a></li>
+                        </ul>
+                    </div>
+                </p>
             </div>
         </div>
 
@@ -91,11 +87,12 @@ a {
                     <li><a href="chalet.php">Chalet UGB</a></li>
                     <li><a href="ordenes.php">Ordenes</a></li>
                     <li><a href="Sugerencias.php">Sugerencias</a></li>
-                 
                 </ul>
-
-              
             </nav>
         </div>
     </header>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -9,16 +9,15 @@
   .card {
   width: 300px; /* Ancho fijo de 300 píxeles */
   height: 200px; /* Alto fijo de 200 píxeles */
-  /* Otros estilos, como margen y relleno, si es necesario */
 }
   .card-product {
-    width: 250px; /* Establece el ancho fijo deseado */
+    width: 235px; /* Establece el ancho fijo deseado */
     margin: 10px; /* Espacio entre los productos */
-    border: 1px solid #ccc; /* Borde opcional */
+    border: 1px solid black; /* Borde opcional */
   }
 
   .container-img {
-    max-height: 200px; /* Establece la altura máxima para la imagen */
+    max-height: 300px; /* Establece la altura máxima para la imagen */
     text-align: center;
   }
 
@@ -46,11 +45,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10px;
+  padding: 15px;
 }
 
 .ordenar {
-  margin-bottom: 10px; /* Agrega margen inferior para espacio */
+  margin-bottom: 10; /* Agrega margen inferior para espacio */
 }
 
 .price {

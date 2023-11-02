@@ -78,30 +78,41 @@ function agregarProducto(productName, price) {
 function agregarCantidad(index) {
     const ordenes = JSON.parse(localStorage.getItem("ordenes")) || [];
 
-    if (index >= 0 && index < ordenes.length) {
-        // Aumentar la cantidad del producto en la posición 'index'
-        ordenes[index].cantidad += 1;
+    if (index >= 0 && index < ordenes.length && ordenes[index].cantidad > 1) {
+        const producto = ordenes[index];
+        const confirmar = confirm(`¿Deseas sumar una unidad del producto ${producto.product}?`);
+
+        if (confirmar) {
+            // Reducir la cantidad del producto en la posición 'index'
+            producto.cantidad += 1;
 
         // Guardar la lista de órdenes actualizada en el almacenamiento local
         localStorage.setItem("ordenes", JSON.stringify(ordenes));
 
         mostrarOrdenes(); // Actualizar la lista después de cambiar la cantidad
     }
+}
 }
 
 function restarCantidad(index) {
     const ordenes = JSON.parse(localStorage.getItem("ordenes")) || [];
 
     if (index >= 0 && index < ordenes.length && ordenes[index].cantidad > 1) {
-        // Reducir la cantidad del producto en la posición 'index'
-        ordenes[index].cantidad -= 1;
+        const producto = ordenes[index];
+        const confirmar = confirm(`¿Deseas restar una unidad del producto ${producto.product}?`);
 
-        // Guardar la lista de órdenes actualizada en el almacenamiento local
-        localStorage.setItem("ordenes", JSON.stringify(ordenes));
+        if (confirmar) {
+            // Reducir la cantidad del producto en la posición 'index'
+            producto.cantidad -= 1;
 
-        mostrarOrdenes(); // Actualizar la lista después de cambiar la cantidad
+            // Guardar la lista de órdenes actualizada en el almacenamiento local
+            localStorage.setItem("ordenes", JSON.stringify(ordenes));
+
+            mostrarOrdenes(); // Actualizar la lista después de cambiar la cantidad
+        }
     }
 }
+
 
 function eliminarProducto(index) {
     const ordenes = JSON.parse(localStorage.getItem("ordenes")) || [];
