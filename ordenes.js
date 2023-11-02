@@ -2,19 +2,16 @@
 
  
 
-let alertaMostrada = false; // Variable para rastrear si la alerta ya se mostró
+let alertaMostrada = false; 
 
-// Definir la variable usuario (debes asignar un valor)
 const usuario = "EjemploUsuario";
 
 function mostrarOrdenes() {
     const ordenList = document.getElementById("orden-list");
-    ordenList.innerHTML = ""; // Limpiamos la lista antes de actualizarla
+    ordenList.innerHTML = ""; 
 
-    // Recuperar las órdenes almacenadas en el almacenamiento local
     const ordenes = JSON.parse(localStorage.getItem("ordenes")) || [];
 
-    // Iterar sobre las órdenes y mostrarlas en la lista
     ordenes.forEach((orden, index) => {
         const listItem = document.createElement("li");
         listItem.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
@@ -56,23 +53,20 @@ function mostrarOrdenes() {
 }
 
 function agregarProducto(productName, price) {
-    // Obtener la lista de órdenes existente o crear una nueva si no existe
     let ordenes = JSON.parse(localStorage.getItem("ordenes")) || [];
 
-    // Agregar el nuevo producto a la lista de órdenes
     const orden = {
         product: productName,
         price: price,
         tiempo: new Date(),
-        cantidad: 1, // Inicializar la cantidad en 1
+        cantidad: 1, 
     };
 
     ordenes.push(orden);
 
-    // Guardar la lista de órdenes en el almacenamiento local
     localStorage.setItem("ordenes", JSON.stringify(ordenes));
 
-    mostrarOrdenes(); // Actualizar la lista después de agregar un producto
+    mostrarOrdenes(); 
 }
 
 function agregarCantidad(index) {
@@ -83,13 +77,11 @@ function agregarCantidad(index) {
         const confirmar = confirm(`¿Deseas sumar una unidad del producto ${producto.product}?`);
 
         if (confirmar) {
-            // Reducir la cantidad del producto en la posición 'index'
             producto.cantidad += 1;
 
-        // Guardar la lista de órdenes actualizada en el almacenamiento local
         localStorage.setItem("ordenes", JSON.stringify(ordenes));
 
-        mostrarOrdenes(); // Actualizar la lista después de cambiar la cantidad
+        mostrarOrdenes(); 
     }
 }
 }
@@ -102,13 +94,11 @@ function restarCantidad(index) {
         const confirmar = confirm(`¿Deseas restar una unidad del producto ${producto.product}?`);
 
         if (confirmar) {
-            // Reducir la cantidad del producto en la posición 'index'
             producto.cantidad -= 1;
 
-            // Guardar la lista de órdenes actualizada en el almacenamiento local
             localStorage.setItem("ordenes", JSON.stringify(ordenes));
 
-            mostrarOrdenes(); // Actualizar la lista después de cambiar la cantidad
+            mostrarOrdenes(); 
         }
     }
 }
@@ -120,10 +110,9 @@ function eliminarProducto(index) {
     if (index >= 0 && index < ordenes.length) {
         ordenes.splice(index, 1);
 
-        // Guardar la lista de órdenes actualizada en el almacenamiento local
         localStorage.setItem("ordenes", JSON.stringify(ordenes));
 
-        mostrarOrdenes(); // Actualizar la lista después de eliminar un producto
+        mostrarOrdenes();
     }
 
 }
@@ -139,8 +128,6 @@ function rellenarCeros(valor) {
     return valor < 10 ? `0${valor}` : valor;
 }
 
-// Llama a mostrarOrdenes para cargar la lista de órdenes al inicio
 mostrarOrdenes();
 
-// Configura un intervalo para actualizar la lista de órdenes cada segundo
 setInterval(mostrarOrdenes, 1000);

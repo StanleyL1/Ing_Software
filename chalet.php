@@ -6,17 +6,17 @@
     flex-wrap: wrap;
   }
   .card {
-  width: 300px; /* Ancho fijo de 300 píxeles */
-  height: 200px; /* Alto fijo de 200 píxeles */
+  width: 300px; 
+  height: 200px; 
 }
   .card-product {
     width: 235px; /* Establece el ancho fijo deseado */
     margin: 10px; /* Espacio entre los productos */
-    border: 1px solid black; /* Borde opcional */
+    border: 1px solid black; 
   }
 
   .container-img {
-    max-height: 300px; /* Establece la altura máxima para la imagen */
+    max-height: 300px; 
     text-align: center;
   }
 
@@ -34,11 +34,11 @@
   .button-group {
   display: flex;
   justify-content: center;
-  margin-top: 10px; /* Ajusta el margen superior según tus preferencias */
+  margin-top: 10px; 
 }
 
 .card-product {
-  text-align: center; /* Centra el contenido en cada tarjeta */
+  text-align: center; 
 }
 .content-card-product {
   display: flex;
@@ -48,7 +48,7 @@
 }
 
 .ordenar {
-  margin-bottom: 10; /* Agrega margen inferior para espacio */
+  margin-bottom: 10;
 }
 
 .price {
@@ -267,7 +267,7 @@ height: 200px;
 							<p class="price">$0.35</p>
 						</div>
 					</div>
-					<!-- Producto 2 -->
+					
 					<div class="card-product">
 						<div class="container-img">
 							<img
@@ -289,7 +289,7 @@ height: 200px;
 						</div>
 					</div>
 					
-					<!--  -->
+					
 					<div class="card-product">
 						<div class="container-img">
 							<img src="productos/queso.jpg" alt="Queso" />
@@ -345,7 +345,7 @@ height: 200px;
 							<p class="price">$0.70</p>
 						</div>
 					</div>
-					<!-- Producto 2 -->
+					
 					<div class="card-product">
 						<div class="container-img">
 							<img
@@ -371,7 +371,6 @@ height: 200px;
 				<h1 class="heading-1">Almuerzos</h1>
 
 				<div class="container-products">
-					<!-- Producto 1 -->
 					<div class="card-product">
 						<div class="container-img">
 							<img src="productos/polloempanizado.jpg" alt="polloempanizado" />
@@ -408,7 +407,7 @@ height: 200px;
 							<p class="price">$2.00</p>
 						</div>
 					</div>
-					<!-- Producto 2 -->
+					
 					<div class="card-product">
 						<div class="container-img">
 							<img
@@ -431,7 +430,7 @@ height: 200px;
 						</div>
 					</div>
 					
-					<!--  -->
+					
 					<div class="card-product">
 						<div class="container-img">
 							<img src="productos/polloguisado.jpg" alt="polloguisado" />
@@ -450,7 +449,7 @@ height: 200px;
 							<p class="price">$2.50</p>
 						</div>
 					</div>
-					<!--  -->
+					
 					<div class="card-product">
 						<div class="container-img">
 							<img src="productos/pollodorado.jpg" alt="pollodorado" />
@@ -525,7 +524,6 @@ height: 200px;
 							<p class="price">$2.50</p>
 						</div>
 					</div>
-					<!-- Producto 1 -->
 					<div class="card-product">
 						<div class="container-img">
 							<img src="productos/chuleta.jpg" alt="chuleta" />
@@ -561,7 +559,7 @@ height: 200px;
 							<p class="price">$2.00</p>
 						</div>
 					</div>
-					<!-- Producto 2 -->
+					
 					<div class="card-product">
 						<div class="container-img">
 							<img
@@ -583,7 +581,7 @@ height: 200px;
 						</div>
 					</div>
 					
-					<!--  -->
+					
 					<div class="card-product">
 						<div class="container-img">
 							<img src="productos/rellenoguis.jpg" alt="rellenoguis" />
@@ -608,7 +606,6 @@ height: 200px;
 				<h1 class="heading-1">Bebidas</h1>
 
 				<div class="container-products">
-					<!-- Producto 1 -->
 					<div class="card-product">
 						<div class="container-img">
 							<img src="productos/sodas.jpg" alt="sodas" />
@@ -643,7 +640,7 @@ height: 200px;
 							<p class="price">$1.10</p>
 						</div>
 					</div>
-					<!-- Producto 2 -->
+					
 					<div class="card-product">
 						<div class="container-img">
 							<img
@@ -665,7 +662,7 @@ height: 200px;
 						</div>
 					</div>
 					
-					<!--  -->
+					
 					<div class="card-product">
 						<div class="container-img">
 							<img src="productos/frutado.jpg" alt="frutado" />
@@ -684,7 +681,7 @@ height: 200px;
 							<p class="price">$0.60</p>
 						</div>
 					</div>
-					<!--  -->
+					
 					<div class="card-product">
 						<div class="container-img">
 							<img src="productos/yogut.jpg" alt="yogut" />
@@ -707,7 +704,7 @@ height: 200px;
 					<h1 class="heading-1">	Golosinas</h1>
 	
 					<div class="container-products">
-						<!-- Producto 1 -->
+
 						<div class="card-product">
 							<div class="container-img">
 								<img src="productos/halls.jpg" alt="halls" />
@@ -744,7 +741,7 @@ height: 200px;
 								<p class="price">$0.15</p>
 							</div>
 						</div>
-						<!-- Producto 2 -->
+						
 						<div class="card-product">
 							<div class="container-img">
 								<img
@@ -767,7 +764,7 @@ height: 200px;
 							</div>
 						</div>
 						
-						<!--  -->
+
 						<div class="card-product">
 							<div class="container-img">
 								<img src="productos/trident twist.jpg" alt="tridentwist" />
@@ -786,7 +783,7 @@ height: 200px;
 								<p class="price">$0.65</p>
 							</div>
 						</div>
-						<!--  -->
+
 						<div class="card-product">
 							<div class="container-img">
 								<img src="productos/clorets 12.jpg" alt="clorets" />
@@ -861,7 +858,7 @@ height: 200px;
 								<p class="price">$0.25</p>
 							</div>
 						</div>
-						<!-- Producto 1 -->
+
 						<div class="card-product">
 							<div class="container-img">
 								<img src="productos/saladinas.jpg" alt="saladinas" />

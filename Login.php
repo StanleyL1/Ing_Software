@@ -1,6 +1,7 @@
     <?php
     session_start();
     ?>
+
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -11,13 +12,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-
         <link rel="stylesheet" href="assets/css/estilos.css">
     </head>
     <body>
 
-
-        
         <div class="formulario__login" id="form-login">
         <div class="container">
             <div class="row justify-content-center mt-5">
@@ -51,31 +49,13 @@
     </div>
 
     <div class="olvidadoContrasena" id="form-recuperacion" style="display: none;">
-    <div class="container">
-            <div class="row justify-content-center mt-5">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header text-center">
-                            <h2>Recuperar Contraseña</h2>
-                        </div>
-                        <div class="card-body">
-                            <form action="procesar_recuperacion.php" method="POST" id="form-recuperacion">
-                                <div class="mb-3">
-                                    <label for="txtcorreo" class="form-label">Correo Electrónico</label>
-                                    <input type="text" class="form-control" id="txtcorreo" name="txtcorreo" required>
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-block">Recuperar Contraseña</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <h2>Recuperar Contraseña</h2>
+    <form method="post" action="recuperar.php">
+        Correo Electrónico: <input type="email" name="email" required><br>
+        <input type="submit" value="Recuperar Contraseña">
+    </form>
         </div>
 
-
-
-        
     <div class="formulario__register" id="form-register" style="display: none;">
     <div class="container mt-4">
             <div class="row justify-content-center">
@@ -108,7 +88,6 @@
                             </form>
     </div>
 
-
             <script src="assets/js/script.js"></script>
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
@@ -126,8 +105,6 @@
     });
     </script>
 
-
-            
                 <script>
         document.addEventListener('DOMContentLoaded', function() {
             const correoInput = document.getElementById('correo');
@@ -166,12 +143,6 @@
         });
     });
     </script>
-
-
-
-
-
-
-            
+    
     </body>
     </html>

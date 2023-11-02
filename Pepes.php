@@ -49,7 +49,7 @@
 }
 
 .ordenar {
-  margin-bottom: 10; /* Agrega margen inferior para espacio */
+  margin-bottom: 10; 
 }
 
 .price {
@@ -351,7 +351,6 @@ height: 200px;
 					<p class="price">$0.50</p>
 				</div>
 			</div>
-			<!-- Producto 2 -->
 			<div class="card-product">
 				<div class="container-img">
 					<img src="productos/cebada.jpg" alt="" />
@@ -392,7 +391,6 @@ height: 200px;
 				</div>
 			</div>
 
-			<!--  -->
 			<div class="card-product">
 				<div class="container-img">
 					<img src="productos/jugo del vale.jpeg" alt="Cafe Viena" />
@@ -413,7 +411,6 @@ height: 200px;
 					<p class="price">$0.75</p>
 				</div>
 			</div>
-			<!--  -->
 			<div class="card-product">
 				<div class="container-img">
 					<img src="productos/coca.jpg" alt="Cafe Liqueurs" />

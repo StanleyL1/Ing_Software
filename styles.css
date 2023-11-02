@@ -31,9 +31,6 @@ html {
 	font-size: 3rem;
 }
 
-/* ********************************** */
-/*               HEADER               */
-/* ********************************** */
 .container-hero {
 	background-color: var(--background-color);
 }
@@ -95,7 +92,6 @@ html {
 	flex-direction: column;
 }
 
-/* ************* NAVBAR ************* */
 .container-navbar {
 	background-color: var(--primary-color);
 }
