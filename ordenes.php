@@ -8,7 +8,7 @@
     
 
     <script>
-        let usuario = "<?php echo htmlspecialchars($_SESSION['usuario']); ?>";
+        let nombre_completo = "<?php echo htmlspecialchars($_SESSION['nombre_completo']); ?>";
       
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -19,5 +19,5 @@
     <script src="ordenes.js"></script>
 	<script src="productos.js"></script>
 
-</body>
+
 </html>

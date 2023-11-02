@@ -7,7 +7,6 @@ $usuario = $_POST['usuario'];
 $contraseña = $_POST['contraseña'];
 $contraseña = password_hash($_POST['contraseña'], PASSWORD_DEFAULT);
 
-// Validación del formato del correo electrónico
 if (!filter_var($correo, FILTER_VALIDATE_EMAIL) || !preg_match('/@ugb.edu.sv$/', $correo)) {
     echo '
     <script>

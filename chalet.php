@@ -5,7 +5,11 @@
     display: flex;
     flex-wrap: wrap;
   }
-
+  .card {
+  width: 300px; /* Ancho fijo de 300 píxeles */
+  height: 200px; /* Alto fijo de 200 píxeles */
+  /* Otros estilos, como margen y relleno, si es necesario */
+}
   .card-product {
     width: 250px; /* Establece el ancho fijo deseado */
     margin: 10px; /* Espacio entre los productos */
@@ -24,16 +28,39 @@
     vertical-align: middle;
   }
 
-  .content-card-product {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
-  }
-
+  
   .price {
     text-align: center;
   }
+  .button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; /* Ajusta el margen superior según tus preferencias */
+}
+
+.card-product {
+  text-align: center; /* Centra el contenido en cada tarjeta */
+}
+.content-card-product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.ordenar {
+  margin-bottom: 10px; /* Agrega margen inferior para espacio */
+}
+
+.price {
+  text-align: center;
+}
+.card-product img {
+width: 200px;
+height: 200px;
+}
+
+
 </style>
 
 
@@ -52,16 +79,15 @@
 				<div class="container-products">
 					<div class="card-product">
 						<div class="container-img">
-							<img src="productos/frijoles.jpg" alt="frijoles" />
+						<img src="productos/frijoles.jpg" alt="frijoles" style="width: 200px; height: 200px;" />
 							<span class="discount"></span>
 							<div class="button-group">
 							
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('frijoles', 0.50)">Ordenar</button>
-	
 							</div>
 							<h3>frijoles</h3>
 							
@@ -78,7 +104,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('Platanos', 0.75)">Ordenar</button>
 	
 							</div>
@@ -100,7 +126,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('Arroz Negrito', 0.50)">Ordenar</button>
 	
 							</div>
@@ -120,7 +146,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('Huevo', 0.60)">Ordenar</button>
 	
 							</div>
@@ -137,7 +163,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('Tortilla', 0.60)">Ordenar</button>
 	
 							</div>
@@ -157,7 +183,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('Jamonhuevo', 0.95)">Ordenar</button>
 	
 							</div>
@@ -179,7 +205,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('huevosalchicha', 0.95)">Ordenar</button>
 	
 							</div>
@@ -196,7 +222,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('Chorizo', 0.95)">Ordenar</button>
 	
 							</div>
@@ -214,7 +240,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('cafe 8 onz', 0.30)">Ordenar</button>
 	
 							</div>
@@ -232,7 +258,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('Chocolate', 0.35)">Ordenar</button>
 	
 							</div>
@@ -255,7 +281,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br><br><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('Crema', 0.35)">Ordenar</button>
 	
 							</div>
@@ -274,7 +300,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('Queso', 0.40)">Ordenar</button>
 	
 							</div>
@@ -293,7 +319,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('pupusafrijol', 0.60)">Ordenar</button>
 	
 							</div>
@@ -311,7 +337,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('pupusachicharron', 0.70)">Ordenar</button>
 	
 							</div>
@@ -333,7 +359,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('pupusapollo', 0.70)">Ordenar</button>
 	
 							</div>
@@ -356,7 +382,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('polloempanizado', 3.00)">Ordenar</button>
 	
 							</div>
@@ -375,7 +401,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('Polloentomatado', 2.00)">Ordenar</button>
 	
 							</div>
@@ -396,7 +422,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('polloencebollado', 2.00)">Ordenar</button>
 	
 							</div>
@@ -416,7 +442,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('polloguisado', 2.50)">Ordenar</button>
 	
 							</div>
@@ -434,7 +460,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br><br><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('pollodorado', 3.00)">Ordenar</button>
 	
 							</div>
@@ -452,7 +478,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('carneguisada', 2.50)">Ordenar</button>
 	
 							</div>
@@ -474,7 +500,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br><br><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('carnetomatada', 2.50)">Ordenar</button>
 	
 							</div>
@@ -491,7 +517,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('carnencebollada', 2.50)">Ordenar</button>
 	
 							</div>
@@ -510,7 +536,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('chuleta', 2.50)">Ordenar</button>
 	
 							</div>
@@ -528,7 +554,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('rellenocoli', 2.00)">Ordenar</button>
 	
 							</div>
@@ -549,7 +575,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('rellenoejo', 2.00)">Ordenar</button>
 	
 							</div>
@@ -568,7 +594,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br><br><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('rellenoguis', 2.00)">Ordenar</button>
 	
 							</div>
@@ -593,7 +619,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('sodas', 0.75)">Ordenar</button>
 	
 							</div>
@@ -610,7 +636,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('gatorade', 1.10)">Ordenar</button>
 	
 							</div>
@@ -631,7 +657,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('agua', 0.50)">Ordenar</button>
 	
 							</div>
@@ -650,7 +676,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('frutado', 0.60)">Ordenar</button>
 	
 							</div>
@@ -668,7 +694,7 @@
 							</div>
 						</div>
 						<div class="content-card-product">
-							<div class="stars"><br><br><br><br><br>
+							<div class="ordenar">
 								<button class="btn btn-primary" onclick="agregarProducto('yogut', 0.75)">Ordenar</button>
 
 							</div>
@@ -692,7 +718,7 @@
 								</div>
 							</div>
 							<div class="content-card-product">
-								<div class="stars"><br><br><br><br><br>
+								<div class="ordenar">
 									<button class="btn btn-primary" onclick="agregarProducto('halls', 0.40)">Ordenar</button>
 		
 								</div>
@@ -711,7 +737,7 @@
 								</div>
 							</div>
 							<div class="content-card-product">
-								<div class="stars"><br><br><br><br><br>
+								<div class="ordenar">
 									<button class="btn btn-primary" onclick="agregarProducto('tridentpe', 0.15)">Ordenar</button>
 		
 								</div>
@@ -732,7 +758,7 @@
 								</div>
 							</div>
 							<div class="content-card-product">
-								<div class="stars"><br><br><br><br><br>
+								<div class="ordenar">
 									<button class="btn btn-primary" onclick="agregarProducto('trident18', 1.25)">Ordenar</button>
 		
 								</div>
@@ -752,7 +778,7 @@
 								</div>
 							</div>
 							<div class="content-card-product">
-								<div class="stars"><br><br>
+								<div class="ordenar">
 									<button class="btn btn-primary" onclick="agregarProducto('tridentwist', 0.65)">Ordenar</button>
 		
 								</div>
@@ -770,7 +796,7 @@
 								</div>
 							</div>
 							<div class="content-card-product">
-								<div class="stars"><br><br><br><br><br><br><br><br><br><br>
+								<div class="ordenar">
 									<button class="btn btn-primary" onclick="agregarProducto('clorets', 0.40)">Ordenar</button>
 		
 								</div>
@@ -788,7 +814,7 @@
 								</div>
 							</div>
 							<div class="content-card-product">
-								<div class="stars"><br><br><br><br><br>
+								<div class="ordenar">
 									<button class="btn btn-primary" onclick="agregarProducto('galletari', 0.25)">Ordenar</button>
 		
 								</div>
@@ -810,7 +836,7 @@
 								</div>
 							</div>
 							<div class="content-card-product">
-								<div class="stars"><br><br><br><br><br>
+								<div class="ordenar">
 									<button class="btn btn-primary" onclick="agregarProducto('galletachiky', 0.25)">Ordenar</button>
 		
 								</div>
@@ -827,7 +853,7 @@
 								</div>
 							</div>
 							<div class="content-card-product">
-								<div class="stars"><br><br><br><br><br>
+								<div class="ordenar">
 									<button class="btn btn-primary" onclick="agregarProducto('fregel', 0.25)">Ordenar</button>
 		
 								</div>
@@ -846,7 +872,7 @@
 								</div>
 							</div>
 							<div class="content-card-product">
-								<div class="stars"><br><br><br><br><br>
+								<div class="ordenar">
 									<button class="btn btn-primary" onclick="agregarProducto('saladinas', 0.20)">Ordenar</button>
 		
 								</div>
@@ -864,7 +890,7 @@
 								</div>
 							</div>
 							<div class="content-card-product">
-								<div class="stars"><br><br><br><br><br><br><br><br><br>
+								<div class="ordenar">
 									<button class="btn btn-primary" onclick="agregarProducto('vita', 0.20)">Ordenar</button>
 
 								</div>

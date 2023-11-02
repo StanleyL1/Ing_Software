@@ -2,33 +2,64 @@
 
 	<style>
 		
-
+		.container-products {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .card {
+  width: 300px; /* Ancho fijo de 300 píxeles */
+  height: 200px; /* Alto fijo de 200 píxeles */
+  /* Otros estilos, como margen y relleno, si es necesario */
+}
   .card-product {
-    width: 100%;
-    margin: 10px;
-    border: 1px solid #ddd; 
-    padding: 10px;
+    width: 250px; /* Establece el ancho fijo deseado */
+    margin: 10px; /* Espacio entre los productos */
+    border: 1px solid #ccc; /* Borde opcional */
+  }
+
+  .container-img {
+    max-height: 200px; /* Establece la altura máxima para la imagen */
     text-align: center;
   }
 
-		 
+  .container-img img {
+    max-width: 100%;
+    max-height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+  }
 
-        .container-img img {
-            max-width: 100%; 
-            height: auto; 
-			background-repeat: no-repeat;
-        }
+  
+  .price {
+    text-align: center;
+  }
+  .button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; /* Ajusta el margen superior según tus preferencias */
+}
 
-      
-     
-        .price {
-            font-weight: bold;
-        }
-        .titulo {
-            font-size: 24px; 
-            font-weight: bold;
-			color: white;
-        }
+.card-product {
+  text-align: center; /* Centra el contenido en cada tarjeta */
+}
+.content-card-product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.ordenar {
+  margin-bottom: 10px; /* Agrega margen inferior para espacio */
+}
+
+.price {
+  text-align: center;
+}
+.card-product img {
+width: 200px;
+height: 200px;
+}
 	</style>
     
 		
@@ -52,11 +83,11 @@
 					<img src="productos/hamburguesa.jpg" alt="Hamburguesa	|" />
 
 				</div>
-				<br>
-				<br><br><br>
+				
+				
 				<div class="content-card-product">
 
-					<div class="stars">
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('Hamburguesa', 1.75)">Ordenar</button>
 
 					</div>
@@ -69,12 +100,12 @@
 			<div class="card-product">
 				<div class="container-img">
 					<img src="productos/pupusas.jpeg" alt="Cafe incafe-ingles.jpg" />
-					<br><br>
+					
 
 
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('Pupusas', 0.75)">Ordenar</button>
 
 					</div>
@@ -91,7 +122,7 @@
 
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('Nachos', 2.00)">Ordenar</button>
 
 					</div>
@@ -109,7 +140,7 @@
 
 				</div>
 				<div class="content-card-product">
-					<div class="stars">
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('Maruchan', 1.75)">Ordenar</button>
 
 					</div>
@@ -125,7 +156,7 @@
 
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('Palomitas', 1.00)">Ordenar</button>
 
 					</div>
@@ -142,7 +173,7 @@
 
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('Panpollo', 0.50)">Ordenar</button>
 
 					</div>
@@ -159,7 +190,7 @@
 
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br><br><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" >Ordenar</button>
 
 					</div>
@@ -176,7 +207,7 @@
 
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('Hotdog', 1.50)">Ordenar</button>
 
 					</div>
@@ -188,12 +219,12 @@
 				</div>
 			</div>
 			<div class="card-product">
-				<div class="container-img"><br>
-					<br><br><br><br><br>
+				<div class="container-img">
+					
 					<img src="productos/oreo.jpg" alt="Oreo" />
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br><br><br><br><br><br><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('Oreo', 0.35)">Ordenar</button>
 					</div>
 					<h3>Oreo</h3>
@@ -202,12 +233,12 @@
 			</div>
 
 			<div class="card-product">
-				<div class="container-img"><br>
-					<br><br><br><br><br><br><br><br>
+				<div class="container-img">
+					
 					<img src="productos/gelatina.jpg" alt="Gelatina" />
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('Gelatina', 0.50)">Ordenar</button>
 					</div>
 					<h3>Gelatina</h3>
@@ -216,11 +247,11 @@
 			</div>			
 
 			<div class="card-product">
-				<div class="container-img"><br><br><br><br>
+				<div class="container-img">
 					<img src="productos/fruta.jpg" alt="Fruta" />
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('Fruta', 1.25)">Ordenar</button>
 					</div>
 					<h3>Vaso de frutas</h3>
@@ -233,7 +264,7 @@
 					<img src="productos/frappe.jpg" alt="Frappe" />
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('Frappe', 2.00)">Ordenar</button>
 					</div>
 					<h3>Frappe</h3>
@@ -246,7 +277,7 @@
 					<img src="productos/flanqueso.jpg" alt="Flan" />
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('Flan', 2.00)">Ordenar</button>
 					</div>
 					<h3>Flan de queso</h3>
@@ -259,7 +290,7 @@
 					<img src="productos/pastel.jpg" alt="Pastel" />
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('Pastel', 2.50)">Ordenar</button>
 					</div>
 					<h3>Poricion de pastel</h3>
@@ -272,7 +303,7 @@
 					<img src="productos/chocobananos.jpg" alt="Pastel" />
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br><br><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('chocobananos', 0.75)">Ordenar</button>
 					</div>
 					<h3>Chocobananos</h3>
@@ -292,7 +323,7 @@
 					</div>
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br><br><br><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('Fresco tamarindo', 0.50)">Ordenar</button>
 
 					</div>
@@ -311,7 +342,7 @@
 					</div>
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br><br><br><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('Fresco horchata', 0.50)">Ordenar</button>
 
 					</div>
@@ -331,7 +362,7 @@
 					</div>
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('Fresco cebada', 0.50)">Ordenar</button>
 
 					</div>
@@ -351,7 +382,7 @@
 					</div>
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br><br><br><br><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('Fresco jamaica', 0.50)">Ordenar</button>
 
 					</div>
@@ -372,7 +403,7 @@
 					</div>
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br>
+					<div class="ordenar">
 						<button class="btn btn-primary"
 							onclick="agregarProducto('Jugo del valle', 0.75)">Ordenar</button>
 
@@ -392,7 +423,7 @@
 					</div>
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('Coca-Cola', 1.00)">Ordenar</button>
 
 					</div>
@@ -411,7 +442,7 @@
 					</div>
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br><br><br><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('cafe', 0.25)">Ordenar</button>
 
 					</div>
@@ -430,7 +461,7 @@
 					</div>
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('gatorade', 1.00)">Ordenar</button>
 
 					</div>
@@ -449,7 +480,7 @@
 					</div>
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br><br><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('Licuadobanano', 1.00)">Ordenar</button>
 
 					</div>
@@ -468,7 +499,7 @@
 					</div>
 				</div>
 				<div class="content-card-product">
-					<div class="stars"><br>
+					<div class="ordenar">
 						<button class="btn btn-primary" onclick="agregarProducto('Licuadofresa', 1.00)">Ordenar</button>
 
 					</div>

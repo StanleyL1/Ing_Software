@@ -13,13 +13,17 @@ session_start();
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
 <script>
     $(document).ready(function() {
         $('.dropdown-toggle').dropdown();
+        
     });
 </script>
+
 
 
 <style>
@@ -62,7 +66,7 @@ a {
 				<div class="btn-group h2">
     <i class="fas fa-user user-name"></i> 
     <span class="user-name">
-    <?php echo htmlspecialchars($_SESSION['usuario']); ?></span>
+    <?php echo htmlspecialchars($_SESSION['nombre_completo']); ?></span>
         <button class="btn btn-secundary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Ajustes
         </button>

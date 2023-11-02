@@ -33,8 +33,8 @@ include 'header.php';
                         <div class="card">
                             <img src="productos/3.jpeg" class="card-img-top" alt="Plato 2">
                             <div class="card-body">
-                                <h5 class="card-title h4"> Plato 2</h5>
-                                <p class="card-text">Descripción </p>
+                                <h5 class="card-title h4">Shaomin</h5>
+                                <p class="card-text">Shaomin de pollo con salsa inglesa </p>
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@ include 'header.php';
                     <div class="row">
                         <div class="col-md-6 h4">
                             <h2>Acerca de Nosotros</h2>
-                            <p>Somos un local de comida ubicado en la Universidad Gerardo Barrios de Usulután. enfrente del parqueo numero 1, Nuestra misión es ofrecer a nuestros clientes una experiencia culinaria única con platos deliciosos y frescos.</p>
+                            <p>Somos un local de comida ubicado en la Universidad Gerardo Barrios de Usulután. Nuestra misión es ofrecer a nuestros clientes una experiencia culinaria única con platos deliciosos y frescos.</p>
                         </div>
                        
                     </div>
@@ -68,8 +68,6 @@ include 'header.php';
                         <address>
                             <strong>Local de Comida UGB Usulután</strong><br>
                             Dirección: Campus UGB, Usulután<br>
-                            Teléfono: +503 7260-2346<br>
-                            Email: info@localugb.com
                         </address>
                     </div>
                    

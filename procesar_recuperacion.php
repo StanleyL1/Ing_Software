@@ -16,15 +16,15 @@ if ($nr == 1) {
     $paracorreo = $correo;
     $titulo = "Recuperar contraseña";
     $mensaje = "tu contraseña es:" .$enviarcontraseña;
+    $tucorreo = "From: xxxxx@gmail.com";
 
-    if (mail($paracorreo, $titulo, $mensaje, )) {
-        echo "<s> alert ('contraseña enviada'); window.location='login.php </s>";
+    if (mail($paracorreo, $titulo, $mensaje, $tucorreo)) {
+        echo "<script> alert ('contraseña enviada'); window.location=' ../Login.php </script>";
         } else {
-            echo "<s> alert ('Error'); window.location='../login.php </s>";
+            echo "<script>  alert ('Error'); window.location='../login.php </script>";
 
         }
-
-
+    
 }
 }
 
