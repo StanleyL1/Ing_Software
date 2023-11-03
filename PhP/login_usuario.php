@@ -24,4 +24,3 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
     echo '<script>alert("Usuario incorrecto"); window.location = "../Login.php";</script>';
     exit;
 }
-?>

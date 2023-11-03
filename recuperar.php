@@ -1,25 +1,26 @@
 <?php
-include 'PhP/conexion_be.php';
-ini_set("SMTP", "smtp.gmail.com");
-ini_set("smtp_port", "587");
+// Verificar si se ha enviado un formulario
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Recuperar la dirección de correo electrónico del formulario
+    $email = $_POST['email'];
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST["email"];
+    // Verificar si la dirección de correo electrónico es válida y pertenece a Outlook
+    if (esCorreoValido($email) && esOutlook($email)) {
+        // Generar un token único y seguro (reemplaza 'generarTokenUnico' con tu propia lógica)
+        $token = generarTokenUnico();
 
-    $token = bin2hex(random_bytes(32));
+        // Guardar el token y la dirección de correo electrónico en la base de datos (reemplaza con tu propia lógica)
+        guardarTokenEnBaseDeDatos($email, $token);
 
+        // Enviar un correo electrónico al usuario con el enlace de recuperación (reemplaza con tu propia lógica)
+        enviarCorreoRecuperacion($email, $token);
 
-    $reset_link = "https://tuaplicacion.com/restablecer-contrasena.php?token=" . $token;
-
-    $to = $email;
-    $subject = "Recuperación de Contraseña";
-    $message = "Para restablecer tu contraseña, haz clic en el siguiente enlace: " . $reset_link;
-    $headers = "From: Stanleylarin10@correo.com";
-
-    if (mail($to, $subject, $message, $headers)) {
-        echo "Se ha enviado un enlace de restablecimiento a tu correo electrónico. Por favor, verifica tu bandeja de entrada.";
+        // Redirigir al usuario a una página de confirmación
+        header("Location: confirmacion.php");
+        exit;
     } else {
-        echo "Hubo un problema al enviar el correo electrónico. Por favor, inténtalo de nuevo más tarde.";
+        // Mostrar un mensaje de error si la dirección de correo electrónico no es válida
+        echo "La dirección de correo electrónico no es válida.";
     }
 }
-?>
+// Resto de la lógica de recuperación de contraseña aquí
