@@ -1,7 +1,7 @@
+let alertaMostrada = false;
 
-let alertaMostrada = false; 
+const nombre_completo = "EjemploUsuario";
 
-const usuario = "EjemploUsuario";
 function mostrarOrdenes() {
     const ordenList = document.getElementById("orden-list");
     ordenList.innerHTML = "";
@@ -20,24 +20,28 @@ function mostrarOrdenes() {
 
         listItem.innerHTML = `
         <div>
-        <h5 class="mb-1">Producto:</h5>
-        <p>${orden.product}</p>
-        <h5 class="mb-1">Precio:</h5>
-        <p>$${orden.price}</p>
-        <h5 class="mb-1">Tiempo de orden:</h5>
-        <p>Tiempo restante: ${tiempoRestanteReloj}</p>
-    </div>
-    <div>
-        <h5 class="mb-1">Cantidad:</h5>
-        <p>${orden.cantidad}</p>
-        <button class =  "btn btn-primary" onclick="agregarCantidad(${index})">+</button>
-        <button class  = "btn btn-danger" onclick="restarCantidad(${index})">-</button>
-        <h5 class="mb-1">Total:</h5>
-        <p>$${orden.price * orden.cantidad}</p>           
-        <button id="eliminar-button-${index}" class="btn btn-danger" onclick="eliminarProducto(${index}, this)">Eliminar</button>
+            <h5 class="mb-1">Cliente:</h5>
+            <p>${nombre_completo}</p>
+            <h5 class="mb-1">Producto:</h5>
+            <p>${orden.product}</p>
+            <h5 class="mb-1">Precio:</h5>
+            <p>$${orden.price}</p>
+            <h5 class="mb-1">Tiempo de orden:</h5>
+            <p>Tiempo restante: ${tiempoRestanteReloj}</p>
+        </div>
+        <div>
+            <h5 class="mb-1">Cantidad:</h5>
+            <p>${orden.cantidad}</p>
+            <button class="btn btn-primary" onclick="agregarCantidad(${index})">+</button>
+            <button class="btn btn-danger" onclick="restarCantidad(${index})">-</button>
+            <h5 class="mb-1">Total:</h5>
+            <p>$${orden.price * orden.cantidad}</p>
+        </div>
         `;
 
         ordenList.appendChild(listItem);
+
+
 
         if (tiempoRestante === 0 && !alertaMostrada) {
             alertaMostrada = true;
@@ -68,36 +72,38 @@ function agregarProducto(productName, price) {
 function agregarCantidad(index) {
     const ordenes = JSON.parse(localStorage.getItem("ordenes")) || [];
 
-    if (index >= 0 && index < ordenes.length && ordenes[index].cantidad > 1) {
+    if (index >= 0 && index < ordenes.length) {
         const producto = ordenes[index];
-        const confirmar = confirm(`¿Deseas sumar una unidad del producto ${producto.product}?`);
 
-        if (confirmar) {
+        // Ensure the quantity doesn't exceed 3
+        if (producto.cantidad < 5) {
             producto.cantidad += 1;
 
-        localStorage.setItem("ordenes", JSON.stringify(ordenes));
+            localStorage.setItem("ordenes", JSON.stringify(ordenes));
 
-        mostrarOrdenes(); 
+            mostrarOrdenes();
+        }
     }
 }
-}
+
 
 function restarCantidad(index) {
     const ordenes = JSON.parse(localStorage.getItem("ordenes")) || [];
 
-    if (index >= 0 && index < ordenes.length && ordenes[index].cantidad > 1) {
+    if (index >= 0 && index < ordenes.length) {
         const producto = ordenes[index];
-        const confirmar = confirm(`¿Deseas restar una unidad del producto ${producto.product}?`);
 
-        if (confirmar) {
+        // Ensure the quantity doesn't go below 1
+        if (producto.cantidad > 1) {
             producto.cantidad -= 1;
 
             localStorage.setItem("ordenes", JSON.stringify(ordenes));
 
-            mostrarOrdenes(); 
+            mostrarOrdenes();
         }
     }
-}function eliminarProducto(index, buttonElement) {
+}
+function eliminarProducto(index, buttonElement) {
     const ordenes = JSON.parse(localStorage.getItem("ordenes")) || [];
 
     if (index >= 0 && index < ordenes.length) {
@@ -126,4 +132,4 @@ function rellenarCeros(valor) {
 
 mostrarOrdenes();
 
-setInterval(mostrarOrdenes, 1000);
+setInterval(mostrarOrdenes, 500);

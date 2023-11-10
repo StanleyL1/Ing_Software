@@ -15,6 +15,9 @@ if ($resultado && mysqli_num_rows($resultado) > 0) {
     
     if (password_verify($contraseña, $contraseña_hasheada)) {
         $_SESSION['nombre_completo'] = $row['nombre_completo'];
+        
+        $_SESSION['Apellidos'] = $row['Apellidos'];
+
         header("location: ../inicio.php");
     } else {
         echo '<script>alert("Contraseña incorrecta"); window.location = "../Login.php";</script>';

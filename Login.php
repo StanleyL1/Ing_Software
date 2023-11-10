@@ -47,14 +47,20 @@
             </div>
         </div>
         
-    </div><div class="olvidadoContrasena" id="form-recuperacion" style="display: none;">
-    <h2>Recuperar Contraseña</h2>
-    <form method="post" action="recuperar.php">
-        Correo Electrónico: <input type="email" name="email" required><br>
-        <input type="submit" value="Recuperar Contraseña">
-    </form>
-</div>
+    </div    >
 
+    <div class="olvidadoContrasena" id="form-recuperacion" style="display: none;">
+<div class="container">
+        <h2>Recuperar Contraseña</h2>
+        <form method="post" action="recuperar.php">
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" class="form-control" name="email" id="email" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Recuperar Contraseña</button>
+        </form>
+    </div>
+</div>
 
     <div class="formulario__register" id="form-register" style="display: none;">
     <div class="container mt-4">
@@ -69,6 +75,10 @@
                                 <div class="mb-3">
                                     <label for="nombre_completo" class="form-label">Nombre</label>
                                     <input type="text" class="form-control" id="nombre_completo" name="nombre_completo" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="Apellidos" class="form-label">Apellido</label>
+                                    <input type="text" class="form-control" id="Apellidos" name="Apellidos" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="correo" class="form-label">Correo Electrónico</label>

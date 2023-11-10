@@ -21,24 +21,7 @@ session_start();
             $('.dropdown-toggle').dropdown();
         });
     </script>
-<script>
-    // During login, after verifying user credentials and role:
-if ($userRole === "admin") {
-    $_SESSION['is_admin'] = true;
-} else {
-    $_SESSION['is_admin'] = false;
-}
 
-// When a user wants to delete a review:
-if (isset($_SESSION['is_admin']) && $_SESSION['is_admin']) {
-    // Allow review deletion for admins
-    $reviewId = $_POST['review_id']; // Assuming you have a form input for review_id
-    // Perform the deletion operation here
-} else {
-    echo "You do not have the necessary permissions to delete reviews.";
-}
-
-</script>
     <style>
         a {
             color: black;
@@ -82,7 +65,10 @@ if (isset($_SESSION['is_admin']) && $_SESSION['is_admin']) {
                 <p class="d-flex">
                     <div class="btn-group h2">
                         <i class="fas fa-user user-name"></i>
+      <br>
                         <span class="user-name"><?php echo htmlspecialchars($_SESSION['nombre_completo']); ?></span>
+                        <span class="user-name"><?php echo htmlspecialchars($_SESSION['Apellidos']); ?></span>
+
                         <button class="btn btn-secundary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Ajustes
                         </button>
@@ -104,6 +90,9 @@ if (isset($_SESSION['is_admin']) && $_SESSION['is_admin']) {
                     <li><a href="ordenes.php">Ordenes</a></li>
                     <li><a href="Sugerencias.php">Sugerencias</a></li>
                     <li><a href="Nuevo.php">Proximamente</a></li>
+                    <li><a href="tarjeta.php">Metodo de pago</a></li>
+                    <li><a href="1.php">1</a></li>
+
 
                 </ul>
             </nav>

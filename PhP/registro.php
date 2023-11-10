@@ -2,6 +2,7 @@
 include 'conexion_be.php';
 
 $nombre_completo = $_POST['nombre_completo'];
+$Apellidos = $_POST['Apellidos'];
 $correo = $_POST['correo'];
 $usuario = $_POST['usuario'];
 $contraseña = $_POST['contraseña'];
@@ -36,8 +37,8 @@ if (mysqli_num_rows($Verificar_usuario) > 0) {
     exit();
 }
 
-$query = "INSERT INTO usuarios (nombre_completo, correo, usuario, contraseña) 
-           VALUES ('$nombre_completo', '$correo', '$usuario', '$contraseña')";
+$query = "INSERT INTO usuarios (nombre_completo, Apellidos, correo, usuario, contraseña) 
+           VALUES ('$nombre_completo','$Apellidos', '$correo', '$usuario', '$contraseña')";
 
 $ejecutar = mysqli_query($conexion, $query);
 
