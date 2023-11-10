@@ -20,8 +20,6 @@ function mostrarOrdenes() {
 
         listItem.innerHTML = `
         <div>
-        <h5 class="mb-1">Cliente:</h5>
-        <p>${nombre_completo}</p>
         <h5 class="mb-1">Producto:</h5>
         <p>${orden.product}</p>
         <h5 class="mb-1">Precio:</h5>
