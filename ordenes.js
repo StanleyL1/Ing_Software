@@ -34,12 +34,17 @@ function mostrarOrdenes() {
             <p>${orden.cantidad}</p>
             <button class="btn btn-primary" onclick="agregarCantidad(${index})">+</button>
             <button class="btn btn-danger" onclick="restarCantidad(${index})">-</button>
+            <button class="btn btn-danger" onclick="eliminarProducto(${index})">Eliminar</button>
+    
             <h5 class="mb-1">Total:</h5>
             <p>$${orden.price * orden.cantidad}</p>
+    
+            <button class="btn btn-success mt-2" onclick="pagar()">Pagar Ahora</button>
         </div>
-        `;
-
-        ordenList.appendChild(listItem);
+    `;
+    
+    ordenList.appendChild(listItem);
+    
 
 
 
@@ -75,7 +80,6 @@ function agregarCantidad(index) {
     if (index >= 0 && index < ordenes.length) {
         const producto = ordenes[index];
 
-        // Ensure the quantity doesn't exceed 3
         if (producto.cantidad < 5) {
             producto.cantidad += 1;
 
@@ -93,7 +97,6 @@ function restarCantidad(index) {
     if (index >= 0 && index < ordenes.length) {
         const producto = ordenes[index];
 
-        // Ensure the quantity doesn't go below 1
         if (producto.cantidad > 1) {
             producto.cantidad -= 1;
 
@@ -131,5 +134,47 @@ function rellenarCeros(valor) {
 }
 
 mostrarOrdenes();
+function pagar(precioTotal) {
+    const ordenes = JSON.parse(localStorage.getItem("ordenes")) || [];
 
-setInterval(mostrarOrdenes, 500);
+    Swal.fire({
+        title: '¿Cómo quieres pagar?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Efectivo',
+        cancelButtonText: 'Tarjeta'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: 'Pagarás en Efectivo',
+                text: `El total a pagar es $${precioTotal}`,
+                icon: 'info',
+                confirmButtonText: 'Ok'
+            });
+            // Aquí podrías agregar la lógica para pagar en efectivo y mostrar el monto al usuario
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+            Swal.fire({
+                title: 'Pago con Tarjeta',
+                html: '<input type="text" id="numeroTarjeta" placeholder="Ingresa tu número de tarjeta" class="swal2-input">',
+                icon: 'info',
+                confirmButtonText: 'Ok',
+                preConfirm: () => {
+                    const numeroTarjeta = Swal.getPopup().querySelector('#numeroTarjeta').value;
+                    // Aquí puedes manejar la lógica relacionada con el número de tarjeta ingresado
+                    return numeroTarjeta;
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    const tarjetaIngresada = result.value;
+                    // Puedes hacer algo con el número de tarjeta ingresado
+                    Swal.fire('Tarjeta ingresada', `Número de tarjeta: ${tarjetaIngresada}`, 'success');
+                }
+            });
+            // Aquí podrías agregar la lógica para pagar con tarjeta
+        }
+    });
+}
+    // Llamada a la función pagar con el precio total del producto
+    
+
+setInterval(mostrarOrdenes, 5000);

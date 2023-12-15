@@ -1,12 +1,6 @@
 <?php include 'header.php'; ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        body {
-            background-color: #f5f5f5;
-        }
 
+    <style>
    
 
         .h1 {
@@ -82,13 +76,13 @@
 </div>
 
 <script>
-// Escucha el clic en el botón "Opinar" y muestra la alerta
+// lee el clic en el botón "Opinar" y muestra la alerta
 document.addEventListener("DOMContentLoaded", function () {
     const opinarBtn = document.getElementById("opinarBtn");
     opinarBtn.addEventListener("click", function (event) {
         event.preventDefault(); // Evita que el enlace redirija
 
-        Swal.fire({
+        Swal.fire({//muestra una alerta al finalizar el tiempo de preparacion del pedido
             title: "Proximamente",
             text: "¡Gracias por tu opinión!",
             icon: "info",

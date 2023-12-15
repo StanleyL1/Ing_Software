@@ -41,13 +41,33 @@ $query = "INSERT INTO usuarios (nombre_completo, Apellidos, correo, usuario, con
            VALUES ('$nombre_completo','$Apellidos', '$correo', '$usuario', '$contraseña')";
 
 $ejecutar = mysqli_query($conexion, $query);
-
+// Después de la inserción en la tabla usuarios
 if ($ejecutar) {
-    echo '
-    <script>
-    alert("Te has registrado exitosamente");
-    window.location = "../login.php";
-    </script>';
+    // Obtener el ID del usuario recién insertado
+    $id_usuario_insertado = mysqli_insert_id($conexion);
+
+    // Obtener el nombre completo del usuario registrado
+    $nombre_completo_usuario = $nombre_completo . ' ' . $Apellidos;
+
+    // Insertar en la tabla tarjetas
+    $query_tarjetas = "INSERT INTO tarjetas (nombre_completo, numero_tarjeta, usuario, saldo) 
+                       VALUES ('$nombre_completo_usuario', 'numerodeTarjeta', '$usuario', 0.00)";
+
+    $ejecutar_tarjetas = mysqli_query($conexion, $query_tarjetas);
+
+    if ($ejecutar_tarjetas) {
+        echo '
+        <script>
+        alert("Te has registrado exitosamente");
+        window.location = "../login.php";
+        </script>';
+    } else {
+        echo '
+        <script>
+        alert("Registro exitoso, pero falló la creación de la tarjeta");
+        window.location = "../login.php";
+        </script>';
+    }
 } else {
     echo '
     <script>
@@ -56,5 +76,4 @@ if ($ejecutar) {
     </script>';
 }
 
-mysqli_close($conexion);
 ?>

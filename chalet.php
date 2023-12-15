@@ -86,7 +86,8 @@ height: 200px;
 						</div>
 						<div class="content-card-product">
 							<div class="ordenar">
-								<button class="btn btn-primary" onclick="agregarProducto('frijoles', 0.50)">Ordenar</button>
+							<button class="btn btn-primary" onclick="agregarProducto('frijoles', 0.50)">Ordenar</button>
+								
 							</div>
 							<h3>frijoles</h3>
 							

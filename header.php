@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,18 +12,24 @@ session_start();
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
-<body>
-    <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
             $('.dropdown-toggle').dropdown();
         });
     </script>
 
+<body>
+
     <style>
+     .header {background-color: cyan;}
         a {
             color: black;
         }
@@ -66,15 +73,13 @@ session_start();
                     <div class="btn-group h2">
                         <i class="fas fa-user user-name"></i>
       <br>
-                        <span class="user-name"><?php echo htmlspecialchars($_SESSION['nombre_completo']); ?></span>
-                        <span class="user-name"><?php echo htmlspecialchars($_SESSION['Apellidos']); ?></span>
+      <span class="user-name"><?php echo htmlspecialchars($_SESSION['nombre_completo']); ?></span>
+<span class="user-name"><?php echo htmlspecialchars($_SESSION['Apellidos']); ?></span>
+<button class="btn btn-secondary ml-2" onclick="location.href='logout.php'">Cerrar Sesión</button>
 
-                        <button class="btn btn-secundary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Ajustes
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="Login.php">Cerrar Sesión</a></li>
-                        </ul>
+    </div>
+</div>
+
                     </div>
                 </p>
             </div>
@@ -85,21 +90,19 @@ session_start();
                 <i class="fa-solid fa-bars"></i>
                 <ul class="menu">
                     <li><a href="Inicio.php">Inicio</a></li>
-                    <li><a href="Pepes.php">Pepe´ Coffe</a></li>
+                    <li><a href="pepes.php">Kiosko UGB</a></li>
                     <li><a href="chalet.php">Chalet UGB</a></li>
                     <li><a href="ordenes.php">Ordenes</a></li>
                     <li><a href="Sugerencias.php">Sugerencias</a></li>
                     <li><a href="Nuevo.php">Proximamente</a></li>
-                    <li><a href="tarjeta.php">Metodo de pago</a></li>
-                    <li><a href="1.php">1</a></li>
+                    <li><a href="mostrar_saldo.php">Metodo de pago</a></li>
+                    <li><a href="admin.php">Admin</a></li>
 
 
                 </ul>
             </nav>
         </div>
-    </header>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
 </body>
 
 </html>

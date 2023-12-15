@@ -8,7 +8,7 @@
         <p class="h5">Explora nuestros locales y realiza tus pedidos en línea. ¡Te esperamos!</p>
         <br>
         <p class="h5">Elige donde pedir en las siguientes opciones!!</p>
-        <a class="btn btn-primary btn-lg" href="Pepes.php" role="button">Pepe's Coffe</a>
+        <a class="btn btn-primary btn-lg" href="pepes.php" role="button">Kiosko UGB</a>
         <a class="btn btn-primary btn-lg" href="chalet.php" role="button">Chalet UGB</a>
     </div>
 </div>

@@ -21,4 +21,10 @@ ordenarButtons.forEach((button) => {
     button.addEventListener("click", function () {
         ordenarProducto(productName, price);
     });
+});document.addEventListener("click", function(event) {
+    if (event.target.classList.contains("btn-primary")) {
+        const productName = event.target.getAttribute("data-product");
+        const price = parseFloat(event.target.getAttribute("data-price"));
+        ordenarProducto(productName, price);
+    }
 });

@@ -37,9 +37,7 @@
                                 <button type="submit" class="btn btn-primary mx-auto d-block">Iniciar Sesion</button>
             <p class="mt-3 text-center">¿ Aun no tienes cuenta? <a href="#" id="mostrarRegistro">Regístrate aquí</a></p>
 
-            <p class="mt-3 text-center">
-        ¿Has olvidado tu contraseña? <a href="#" id="olvidadoContrasena">Recupérala aquí</a>
-    </p>
+         
         </form>
                         </div>
                     </div>
@@ -131,6 +129,8 @@
                 }
             });
         });
+
+
     </script>
 
     <script>
