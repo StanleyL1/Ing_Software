@@ -5,342 +5,149 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="Idiomas.js"></script>
   <style>
-
-
-.Contacto {
-  background-color: #FFC0CB; 
-  color: #333333; 
-  padding: 50px;
-  border-radius: 10px;
-  margin-top: 50px;
-}
-
-.Contacto h2 {
-  color: #6c1414; 
-  margin-bottom: 20px;
-}
-
-.Contacto p {
-  margin-bottom: 20px;
-}
-
-.contact-form .form-group label {
-  color: #333333; 
-}
-
-.contact-form .form-control {
-  background-color: #FFFFFF; 
-  border-color: #6c1414;
-  color: #333333; 
-}
-
-.contact-form .form-control:focus {
-  background-color: #FFFFFF; 
-  border-color: #ff6b6b; 
-  color: #333333; 
-}
-
-.contact-form button[type="submit"] {
-  background-color: #6c1414; 
-  border-color: #6c1414; 
-}
-
-.contact-form button[type="submit"]:hover {
-  background-color: #ff6b6b; 
-  border-color: #ff6b6b; 
-}
-
     body {
       background-color: #FFC0CB; 
-      color: #333333; 
+      color: #787878; 
     }
-
-    .nav-item {
-    transition: transform 0.3s ease;
-  }
-
-  .nav-item:hover {
-    transform: translateY(-3px);  }
-    .navbar {
-      background-color: #FF6B6B; 
-    }
-
     .navbar-brand {
-      color: #FFFFFF !important;
+      color: #333333; 
+      font-size:22px;
+      font-style: italic;
+    }
+   
+    .navbar-custom {
+      margin-bottom: 2rem; 
+    }
+    .navbar-pastel-rosa {
+      background-color: #FF6B6B; /* Rosa Neón */
+      color: #333333; /* Negro Grafito para el texto */
+    }
+    .navbar-nav .nav-item .nav-link {
+      color: #333333; /* Negro Grafito para los enlaces */
+      transition:  color 0.3 ease-in-out, transform 0.3 ease-in-out;
+      display: inline-block;
+      margin: 0 5px;
+
+    }
+    .navbar-nav .nav-item .nav-link:hover {
+      background-color: #FFC0CB; /* Rosa Pastel para el hover */
+      border: 1px solid  #333333 ;/* Borde rojo alrededor */
+        border-radius: 18px;
+        padding: .4rem 1rem; /* Ajuste el padding según necesidad */
+        transform: scale(1.1); /* Ligeramente más grande */
+        transition: color 0.5s ease-in-out, border 0.3s ease-in-out, transform 0.1s ease;
+    }
+    .profile-section {
+      background-color: #FFC0CB; /* Rosa Pastel */
+      padding: 2rem 0;
+      border-radius: 2rem;
+      margin-top: 5rem;
+    }
+    .profile-image {
+  width: 200px; /* Asegura que el ancho sea igual a la altura */
+  height: 260px; /* Asegura que la altura sea igual al ancho */
+  border-radius: 40%; /* Hace que la imagen sea completamente circular */
+  border: 3px solid #FF6B6B; /* Personaliza el color del borde según sea necesario */
+  margin-top: -75px; /* Ajusta según sea necesario */
+  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1); /* Ajusta la sombra según sea necesario */
+}
+
+    .profile-heading {
+      font-size: 200%;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      color: #333333; /* Negro Grafito */
+      font-style: italic;
+    }
+    .profile-description {
+      color: #333333; /* Gris Grafito */
+      font-size: 1.3rem;
+      font-style: italic;
     }
 
-    .navbar-nav .nav-link {
-      color: #FFFFFF !important; 
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: #FFFFFF !important; 
-    }
-
-    .card-text {
-      font-size: 15px;
-      line-height: 1.6;
-      color: #0d0d0d; 
-    }
-  
-    .card-title {
-      font-size: 20px;
-      font-weight: bold;
-      color: #FF6B6B; 
-      margin-bottom: 15px;
-    }
-  
-    .card ul {
-      margin-bottom: 0;
-      padding-left: 20px;
-    }
-  
-    .card ul li {
-      list-style-type: disc;
-    }
-
-    .proyecto-card {
-      border: 2px solid #eb1ae4; 
-      border-radius: 10px;
-      background-color: #ffffff; 
-      margin-bottom: 20px;
-      transition: transform 0.3s, filter 0.3s;
-    }
-
-    .proyecto-card:hover {
-      transform: scale(1.05);
-      filter: grayscale(50%);
-      border: 3px solid  rgb(17, 250, 75);
-      cursor: pointer;
-    }
 
 
+/* Estilos para el botón */
+.download-button {
+    padding: 15px 5px;
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 33px;
+}
 
+.download-button:hover {
+    background-color: #ffffff;
+    color: black;
+}
 
-    .card {
-      margin-bottom: 20px;
-    }
-    .skills {
-      margin-bottom: 20px;
-    }
-    .skill {
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-    }
-    .skill i {
-      margin-right: 10px;
-    }
-    .label {
-      padding: 5px 10px;
-      margin-right: 10px;
-      border-radius: 5px;
-      background-color: #007bff;
-      color: #fff;
-    }
-    .progress-bar {
-      border-radius: 5px;
-      background-color: #007bff;
-    }
+/* Estilos para el contenedor del botón */
+.button-container {
+    text-align: center;
+    margin-top: 50px; /* Espacio superior para centrar verticalmente */
+}
 
-    
   </style>
   <title>Mi Perfil</title>
 </head>
-<body>
-
-<nav class="navbar navbar-expand-lg navbar-dark">
-  <a class="navbar-brand" href="#">Mi Perfil</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#Inicio">Inicio</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#Proyectos">Proyectos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#Habilidades">Habilidades</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#Certificado">Certificados</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#Contacto">Contacto</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-<div class="container">
-  <div class="text-center">
-    <img src="Perfil.jpg" alt="Mi Foto" class="img-fluid rounded-circle" style="width: 200px; height: 200px;">
-    <h4 class="mt-3">Katterin Yeferin Campos Rodriguez</h4>
-  </div>
-  
-  <div id="Inicio" class="Inicio">
-    <h5>
-      ¡Hola! Soy Katerrin Yeferin Campos Rodrigues, estudiante de ingeniería y redes informáticas en séptimo ciclo en 2024. Apasionada por la electrónica y la tecnología,
-       disfruto explorando el fascinante mundo de los circuitos y la programación. Siempre en busca de nuevos desafíos y oportunidades de aprendizaje</h5>
-    <p><a href="https://www.linkedin.com/" class="btn btn-primary" style="font-size: 14px; padding: 5px 15px; border-radius: 15px;">Linkedin</a>
-    </p>
-  </div>
-  
-    <div id="Proyectos" class="Proyectos">
-      <h2 class="text-center mb-4">Proyectos</h2>
-    
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card proyecto-card" data-nombre=" Circuito de 3 entradas">
-            <img src="proyecto1.jpg" alt="Proyecto 1" class="card-img-top" style="max-width: 100%; max-height: 150px;">
-            <div class="card-body" style="height: 250px;">
-              <h5 class="card-title">Circuito de 3 entradas</h5>
-              <p class="card-text">Este proyecto presenta un circuito de compuerta OR de 3 entradas diseñado para combinar múltiples señales de entrada en una sola salida. 
-                Se utiliza la herramienta de simulación de Tinkercad para verificar el funcionamiento del circuito y su conformidad con la tabla de verdad de una compuerta OR.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card proyecto-card" data-nombre="Luces traseras con LEDS">
-            <img src="Lucestraseras.jpg" alt="Proyecto 2" class="card-img-top" style="max-width: 100%; max-height: 150px;">
-            <div class="card-body" style="height: 250px;">
-              <h5 class="card-title">Luces traseras con LEDS</h5>
-              <p class="card-text">Circuito de luces traseras, usando 12 leds, 3 resistencias, 1 boton, 2  suit,  y 2 transistores, su funcion es simular
-                los frenos de un vehiculo, al apretar el freno (boton)  las luces aumentan su intensidad
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card proyecto-card" data-nombre="Sensor de sombras">
-            <img src="detectorsombra.jpg" alt="Proyecto 3" class="card-img-top" style="max-width: 100%; max-height: 150px;">
-            <div class="card-body" style="height: 250px;">
-              <h5 class="card-title">Sensor de sombras</h5>
-              <p class="card-text">El detector de sombra es un dispositivo que detecta cambios en la intensidad de la luz ambiental y genera una salida correspondiente.
-                 El proyecto utiliza un sensor de luz (LDR) para detectar la presencia o ausencia de sombra y activar un LED como indicador visual.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+<body><nav class="navbar navbar-expand-lg navbar-pastel-rosa">
+    <a class="navbar-brand">Yeferin Campos</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#Inicio" data-i18n="Inicio">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Proyectos" data-key="Proyectos">Proyectos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Habilidades" data-key="Habilidades">Habilidades</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Certificado" data-key="Certificados">Certificados</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Contacto" data-key="Contacto">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://linkedin.com/in/katterin-yeferin-campos-rodriguez-1097b82b7" data-key="linkedin">linkedin</a>
+        </li>
+      
+        <select class="nav-link" id="languageSelector">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+        </select>
+      </ul>
     </div>
-
-    <section id="Habilidades" class="py-5">
-      <div class="container">
-        <h2 class="text-center mb-5" style="color: #333333;">Conocimientos Habilidades y Destrezas</h2>
-        <div class="row">
-          <div class="col-lg-12 mb-4">
-            <div class="card" style="border: 2px solid #333333; border-radius: 10px; background-color: #ffffff;">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-4">
-                    <ul class="card-text" style="color: #333333;">
-                      <li><i class="fas fa-chart-line" style="color: #007bff;"></i> Teoría de Circuitos</li>
-                      <li><i class="fas fa-microchip" style="color: #007bff;"></i> Electrónica Analógica y Digital</li>
-                      <li><i class="fas fa-bolt" style="color: #007bff;"></i> Electrónica de Potencia</li>
-                      <li><i class="fas fa-satellite-dish" style="color: #007bff;"></i> Electrónica de Comunicaciones</li>
-                      <li><i class="fas fa-microchip" style="color: #007bff;"></i> Microcontroladores y Sistemas Embebidos</li>
-                    </ul>
-                  </div>
-                  <div class="col-md-4">
-                    <ul class="card-text" style="color: #333333;">
-                      <li><i class="fas fa-project-diagram" style="color: #007bff;"></i> Diseño de Circuitos</li>
-                      <li><i class="fas fa-cogs" style="color: #007bff;"></i> Solución de Problemas</li>
-                      <li><i class="fas fa-users" style="color: #007bff;"></i> Trabajo en Equipo</li>
-                      <li><i class="fas fa-comments" style="color: #007bff;"></i> Comunicación Técnica</li>
-                    </ul>
-                  </div>
-                  <div class="col-md-4">
-                    <ul class="card-text" style="color: #333333;">
-                      <li><i class="fas fa-lightbulb" style="color: #007bff;"></i> Creatividad</li>
-                      <li><i class="fas fa-adjust" style="color: #007bff;"></i> Adaptabilidad</li>
-                      <li><i class="fas fa-clock" style="color: #007bff;"></i> Gestión del Tiempo</li>
-                      <li><i class="fas fa-graduation-cap" style="color: #007bff;"></i> Aprendizaje Continuo</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <div id="Certificado" class="Certificado">
-      <h2>Certificados</h2>
-      <p>Entradas.</p>
-    </div>
+  </nav>
 
 
-
-    <div id="Contacto" class="Contacto">
-  <h2>Contacto</h2>
-  <p>Para contactarme, puedes utilizar el siguiente formulario o encontrarme en mis redes sociales:</p>
-  <form action="submit.php" method="POST" class="contact-form">
-    <div class="form-group">
-      <label for="nombre">Nombre:</label>
-      <input type="text" class="form-control" id="nombre" name="nombre" required>
-    </div>
-    <div class="form-group">
-      <label for="email">Correo Electrónico:</label>
-      <input type="email" class="form-control" id="email" name="email" required>
-    </div>
-    <div class="form-group">
-      <label for="asunto">Asunto:</label>
-      <input type="text" class="form-control" id="asunto" name="asunto" required>
-    </div>
-    <div class="form-group">
-      <label for="mensaje">Mensaje:</label>
-      <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
-  </form>
+<div class="container profile-section text-center">
+    <img src="Perfil1.jpg" alt="Katterin Yeferin Campos Rodriguez" class="profile-image img-fluid">
+    <h4 class="profile-heading" data-i18n="profileHeading">Mi nombre es Katterin Yeferin Campos Rodriguez</h4>
+    <p class="profile-description" data-i18n="profileDescription">
+      Soy estudiante de ingeniería y redes informáticas del séptimo ciclo en 2024.  cuento con  experiencia en la gestión de proyectos de desarrollo de software,  desempeñándome eficazmente en roles como Scrum Master y Documentadora. Mi experiencia abarca la facilitación de equipos ágiles para asegurar la entrega oportuna y eficiente de proyectos, manteniendo siempre altos estándares de calidad. Capaz de liderar con habilidad la planificación, ejecución y documentación de proyectos complejos, me distingo por mi capacidad para resolver problemas técnicos y promover un ambiente colaborativo. Tambien poseo una sólida base en electrónica análoga y digital, complementada con conocimientos básicos en robótica.
+     </p>
 </div>
 
-    
-
-
-
+<div class="button-container">
+  <a href="ruta/al/documento.pdf" download class="download-button" data-i18n="downloadDocument">Descargar Documento</a>
 </div>
-  
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-
-<script>
-  const cards = document.querySelectorAll('.proyecto-card');
-  cards.forEach(card => {
-    card.addEventListener('mouseover', () => {
-      const nombreProyecto = card.getAttribute('data-nombre');
-      card.querySelector('.card-title').textContent = nombreProyecto;
-    });
-    card.addEventListener('mouseout', () => {
-    });
-  });
-</script>
-
-
-<script>
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        window.scrollTo({
-          top: target.offsetTop,
-          behavior: 'smooth' 
-        });
-      }
-    });
-  });
-</script>
+<script src="https://unpkg.com/i18next@21.6.3/dist/umd/i18next.min.js"></script>
+<script src="https://unpkg.com/i18next-http-backend@1.3.1/dist/umd/i18next-http-backend.min.js"></script>
+<script src="https://unpkg.com/i18next-browser-languagedetector@6.1.1/dist/umd/i18next-browser-languagedetector.min.js"></script>
 
 </body>
 </html>
