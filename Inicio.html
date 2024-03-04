@@ -3,96 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <script src="Idiomas.js"></script>
-  <style>
-    body {
-      background-color: #FFC0CB; 
-      color: #787878; 
-    }
-    .navbar-brand {
-      color: #333333; 
-      font-size:22px;
-      font-style: italic;
-    }
-   
-    .navbar-custom {
-      margin-bottom: 2rem; 
-    }
-    .navbar-pastel-rosa {
-      background-color: #FF6B6B; /* Rosa Neón */
-      color: #333333; /* Negro Grafito para el texto */
-    }
-    .navbar-nav .nav-item .nav-link {
-      color: #333333; /* Negro Grafito para los enlaces */
-      transition:  color 0.3 ease-in-out, transform 0.3 ease-in-out;
-      display: inline-block;
-      margin: 0 5px;
-
-    }
-    .navbar-nav .nav-item .nav-link:hover {
-      background-color: #FFC0CB; /* Rosa Pastel para el hover */
-      border: 1px solid  #333333 ;/* Borde rojo alrededor */
-        border-radius: 18px;
-        padding: .4rem 1rem; /* Ajuste el padding según necesidad */
-        transform: scale(1.1); /* Ligeramente más grande */
-        transition: color 0.5s ease-in-out, border 0.3s ease-in-out, transform 0.1s ease;
-    }
-    .profile-section {
-      background-color: #FFC0CB; /* Rosa Pastel */
-      padding: 2rem 0;
-      border-radius: 2rem;
-      margin-top: 5rem;
-    }
-    .profile-image {
-  width: 200px; /* Asegura que el ancho sea igual a la altura */
-  height: 260px; /* Asegura que la altura sea igual al ancho */
-  border-radius: 40%; /* Hace que la imagen sea completamente circular */
-  border: 3px solid #FF6B6B; /* Personaliza el color del borde según sea necesario */
-  margin-top: -75px; /* Ajusta según sea necesario */
-  box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1); /* Ajusta la sombra según sea necesario */
-}
-
-    .profile-heading {
-      font-size: 200%;
-      margin-top: 2rem;
-      margin-bottom: 0.5rem;
-      color: #333333; /* Negro Grafito */
-      font-style: italic;
-    }
-    .profile-description {
-      color: #333333; /* Gris Grafito */
-      font-size: 1.3rem;
-      font-style: italic;
-    }
-
-
-
-/* Estilos para el botón */
-.download-button {
-    padding: 15px 5px;
-    background-color: #333333;
-    color: white;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    border-radius: 33px;
-}
-
-.download-button:hover {
-    background-color: #ffffff;
-    color: black;
-}
-
-/* Estilos para el contenedor del botón */
-.button-container {
-    text-align: center;
-    margin-top: 50px; /* Espacio superior para centrar verticalmente */
-}
-
-  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">  
+<script src="Funciones.js"></script>
   <title>Mi Perfil</title>
 </head>
 <body><nav class="navbar navbar-expand-lg navbar-pastel-rosa">
@@ -103,34 +17,33 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#Inicio" data-i18n="Inicio">Inicio</a>
+          <a class="nav-link" href="#Inicio" data-i18n="Inicio">Puntos de Interes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#Proyectos" data-key="Proyectos">Proyectos</a>
+          <a class="nav-link" href="http://linkedin.com/in/katterin-yeferin-campos-rodriguez-1097b82b7" data-key="linkedin">Linkedin</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#Habilidades" data-key="Habilidades">Habilidades</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#Certificado" data-key="Certificados">Certificados</a>
+          <a href="ruta_a_tu_documento.pdf"class="nav-link"  download="perfil_profesional.pdf"> Perfil Profesional</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#Contacto" data-key="Contacto">Contacto</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://linkedin.com/in/katterin-yeferin-campos-rodriguez-1097b82b7" data-key="linkedin">linkedin</a>
+          <a class="nav-link" href="#Habilidades" data-key="Habilidades">Habilidades</a>
         </li>
-      
-        <select class="nav-link" id="languageSelector">
-          <option value="es">Español</option>
-          <option value="en">English</option>
-        </select>
+        <li class="nav-item">
+          <a class="nav-link" href="#Proyectos" data-key="Proyectos">Proyectos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#Certificado" data-key="Certificados">Certificados</a>
+        </li>
+       
       </ul>
     </div>
   </nav>
 
 
-<div class="container profile-section text-center">
+<div class=" profile-section text-center">
     <img src="Perfil1.jpg" alt="Katterin Yeferin Campos Rodriguez" class="profile-image img-fluid">
     <h4 class="profile-heading" data-i18n="profileHeading">Mi nombre es Katterin Yeferin Campos Rodriguez</h4>
     <p class="profile-description" data-i18n="profileDescription">
@@ -139,15 +52,199 @@
 </div>
 
 <div class="button-container">
-  <a href="ruta/al/documento.pdf" download class="download-button" data-i18n="downloadDocument">Descargar Documento</a>
+  <a href="CV Katterin Yeferin Campos Rodriguez (1).pdf" download="CV Katterin Campos.pdf" class="download-button">Descargar CV</a>
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<br>
+<h2 id="Habilidades" style="text-align: center;" >Habilidades 💪🏻
+</h2>
+
+<div class="card-container">
+  <div class="card" id="card1">
+    <div class="card-face front">
+      <h4>Habilidades como Scrum Master</h4>
+<h6  >Habilidades Duras</h6>
+<ul>
+  <li>Uso de herramientas para la gestion ágil de proyectos</li>
+  <li>
+    Conocimiento básico en el manejo de Azure DevOps
+  </li>
+  <li>Habilidad para facilitar discusiones dentro del equipo de forma efectiva, planificación del sprint,  reuniones diarias, revisión y retrospectiva del sprint.</li>
+  <li>
+    Conocimiento de Scrum y otras metodologías ágiles, incluyendo sus principios, valores y prácticas.
+  </li>
+  <li>
+    Competencia en el uso de herramientas de software diseñadas 
+    para la gestión ágil de proyectos, como  Azure DevOps, gestionar el backlog y facilitar la colaboración.
+  </li>
+<li>
+  Capacidad para mentorizar y entrenar al equipo en prácticas ágiles, fomentando su crecimiento personal y profesional
+</li>
+</ul>
+
+</div>
+    <div class="card-face back">
+      <h6  >Habilidades Blandas</h6>
+      <ul>
+        <li>Capacidad para liderar y guiar al equipo sin ejercer autoridad directa, fomentando la colaboración y el empoderamiento del equipo</li>
+        <li>
+          Excelentes habilidades de comunicación, tanto oral como escrita, para asegurar que todos los miembros del equipo estén alineados y comprendan los objetivos del proyecto
+        </li>
+        <li>Habilidad para identificar problemas, obstáculos y bloqueos, y trabajar con el equipo para encontrar soluciones efectivas.
+        </li>
+<li>
+  Habilidad para gestionar las expectativas de los stakeholders y facilitar su colaboración y compromiso con el equipo.
+</li>
+      </ul>   
+    </div>
+  </div>
+
+  <div class="card" id="card2">
+    <div class="card-face front">
+      <h4>Habilidades como documentadora</h4>
+      <h6  >Habilidades duras
+      </h6>
+      <ul>
+        <li>Conocimiento básico en el manejo de herramientas de ofimática
+        </li>
+        <li>
+          Escritura Técnica: Capacidad para crear documentación clara, concisa y fácil de entender, incluyendo manuales de usuario, guías de instalación, especificaciones de producto 
+</li>
+        <li>Atención al Detalle: Habilidad para capturar todos los aspectos necesarios en la documentación, asegurando precisión y completitud.
+        </li>
+<li>
+  Comprensión Técnica:  Entendimiento básico de los conceptos técnicos y capacidad para aprender rápidamente nuevas tecnologías para documentarlas eficazmente.
+</li>
+      </ul>   
+    </div>
+    <div class="card-face back">
+      <h6  >Habilidades Blandas</h6>
+      <ul>
+        <li>
+          Capacidad para trabajar con desarrolladores, ingenieros y otros miembros del equipo para obtener la información necesaria para la documentación.
+
+        </li>
+
+        <li>
+          Habilidad para adaptar la documentación a diferentes audiencias, desde usuarios finales hasta desarrolladores técnicos
+        </li>
+        <li>
+          Capacidad de comprender las necesidades de los desarrolladores, usuarios finales y stakeholders para crear documentación que satisfaga sus requerimientos específicos.
+      </li>
+      <li>
+        Habilidad para detectar errores, inconsistencias o ambigüedades en la documentación técnica, asegurando precisión y coherencia.
+
+      </li>
+      </ul>      
+     </div>
+  </div>
+
+
+  <div class="card" id="card3">
+    <div class="card-face front">
+      <h4>Electrónica y Robótica</h4>
+<h6>Habilidades duras</h6> 
+<ul>
+  <li>
+    Manejo de plataformas y entornos específicos para robótica y electrónica.
+
+  </li>
+
+  <li>
+    Capacidad para diseñar y simular circuitos electrónicos análogos y digitales.
+
+  </li>
+
+  <li>
+    Conocimientos en programación de microcontroladores
+
+  </li>
+
+  <li>
+    Conocimientos sobre diversos tipos de sensores e integración en proyectos de electrónica y robótica.
+  </li>
+
+  <li>
+    Uso de software de simulación como, Proteus, para modelar y analizar sistemas electrónicos y de control antes de la construcción física.
+    Habilidades blandas
+  </li>
+
+
+</ul>  
+</div>
+    <div class="card-face back">
+  <h6  >Habilidades Blandas</h6>
+      <ul>
+        <li>
+          Capacidad de identificar problemas complejos y desarrollar soluciones innovadoras
+        </li>
+        
+        <li>
+        Capacidad para comunicar ideas técnicas de manera clara
+        </li>
+        <li>
+          Motivación y capacidad para mantenerse actualizado con las últimas tecnologías y aprender y adaptarse a nuevas tecnologías, herramientas o metodologías en el campo de la electrónica y la robótica.
+      </li>
+      
+      </ul>      
+    </div>
+  </div>
+</div>
+
+
+<h2 id="Inicio" style="text-align: center;" >Puntos de Interes 🗣
+
+</h2>
+
+<div class="containerrr">
+  <div class="area-interes">
+    <h2 class="titulo-area">Tecnologías Emergentes</h2>
+    <p class="descripcion">Exploramos las últimas innovaciones en el mundo tecnológico, incluyendo inteligencia artificial, blockchain, y robótica.</p>
+    
+    <h3 class="subtitulo">Temas Destacados</h3>
+    <ul class="lista-temas">
+      <li>Inteligencia Artificial y Aprendizaje Automático</li>
+      <li>Blockchain y Criptomonedas</li>
+      <li>Robótica Avanzada</li>
+      <li>Realidad Aumentada y Virtual</li>
+    </ul>
+    
+    <p class="conclusion">Estas áreas están redefiniendo la forma en que interactuamos con el mundo, impulsando innovaciones en diversos sectores como la salud, la educación, la industria y más.</p>
+  </div>
+  
+</div>
+
+
+<h2 id="Valores" style="text-align: center;" >Valores Profesionales 👀
+</h2>
+<div class="container">
+  <div class="valores-profesionales">
+    <ul class="lista-valores">
+      <li>Integridad y Ética Profesional</li>
+      <li>Compromiso con la Excelencia</li>
+      <li>Respeto por la Diversidad</li>
+      <li>Innovación y Creatividad</li>
+      <li>Trabajo en Equipo y Colaboración</li>
+      <li>Responsabilidad Social y Ambiental</li>
+    </ul>
+  </div>
+</div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script src="https://unpkg.com/i18next@21.6.3/dist/umd/i18next.min.js"></script>
 <script src="https://unpkg.com/i18next-http-backend@1.3.1/dist/umd/i18next-http-backend.min.js"></script>
 <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.1/dist/umd/i18next-browser-languagedetector.min.js"></script>
 
+
 </body>
+<footer class="text-muted py-4 bg-dark text-white text-center">
+      <p>Email: KatterinRodriguez85@gmail.com</p>
+      <p>Teléfono: 7905-8406</p>
+      <a href="http://linkedin.com/in/katterin-yeferin-campos-rodriguez-1097b82b7" class="linkedin-link">LinkedIn</a>
+  </footer>
+
 </html>
